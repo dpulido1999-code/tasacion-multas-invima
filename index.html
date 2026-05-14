@@ -119,14 +119,14 @@ button:hover{
 <label for="direccion">Dirección:</label>
 <input type="text" id="direccion" name="direccion" placeholder="Calle, ciudad, departamento" required>
 <label for="telefono">Teléfono:</label>
-<input type="tel" id="telefono" name="telefono" placeholder="Ej: 3158321083" required pattern="[0-9]{7,15}">
+<input type="tel" id="telefono" name="telefono" placeholder="Ej: 3118322797" required pattern="[0-9]{7,15}">
 <label for="telefono_adicional">Teléfono adicional:</label>
-<input type="tel" id="telefono_adicional" name="telefono_adicional" placeholder="Ej: 3158321083" required pattern="[0-9]{7,15}">
+<input type="tel" id="telefono_adicional" name="telefono_adicional" placeholder="Ej: 3118322797" required pattern="[0-9]{7,15}">
 
 <label for="email">Correo electrónico:</label>
-<input type="email" id="email" name="email" placeholder="dpulido1999@gmail.com" required>
+<input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required>
 <label for="email_adicional">Correo electrónico adicional:</label>
-<input type="email" id="email_adicional" name="email_adicional" placeholder="dpulido1999@gmail.com" required>
+<input type="email" id="email_adicional" name="email_adicional" placeholder="ejemplo@gmail.com" required>
 
 <label for="titular">Representante legal o titular del establecimiento:</label>
 <input type="text" id="titular" name="titular" placeholder="Nombre del titular" required>
@@ -6830,14 +6830,16 @@ function generarPDF() {
             <!-- 8. PIE DE PÁGINA                                    -->
             <!-- ================================================== -->
             <div class="footer no-print">
-                <p>Motor GUR - Módulo de Tasación de Multas - INVIMA</p>
-                <hr>
+                
+                
                 <button class="btn-pdf" onclick="window.print()">📄 Guardar como PDF</button>
                 <button class="btn-cerrar" onclick="window.close()">❌ Cerrar</button>
+                <p>Creado por: Ing DAVID FERNANDO PULIDO SALAMANCA</p>
             </div>
             <div class="footer" style="margin-top: 20px;">
                 <p>Motor GUR - Módulo de Tasación de Multas - INVIMA</p>
                 <p>D.F.P.S</p>
+
             </div>
         </body>
         </html>
