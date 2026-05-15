@@ -272,20 +272,7 @@ button:hover{
 
 <label for="ponderacion_final">Ponderación final</label>
 <input type="text" id="ponderacion_final" readonly autocomplete="off">
-<!-- ========================= -->
-<!-- Tipo de decenlace de la infracción-->
-<!-- ========================= -->
 
-<label>Tipo de desenlace</label>
-<select id="desenlace" name="desenlace">
-<option value="">Seleccione</option>
-<option value="1">No hubo daño</option>
-<option value="4.2">Requiere intervención médica o quirurgica</option>
-<option value="4.4">Hospitalización inicial o prolongada</option>
-<option value="4.6">Daño de una función o estructura corporal</option>
-<option value="4.8">Enfermedad o daño que amenace la vida</option>
-<option value="5">Muerte</option>
-</select>
 
 <!-- ========================= -->
 <!-- IRA (NUEVO CAMPO MANUAL) --> 
@@ -404,6 +391,20 @@ La congelación o suspensión temporal de la venta o empleo de productos y objet
 <div id="conducta_producto" style="background:#f5f5f5;padding:10px;border-radius:5px;max-height:250px;overflow-y:auto;">
 Seleccione un producto primero...
 </div>
+<!-- ========================= -->
+<!-- Tipo de decenlace de la infracción-->
+<!-- ========================= -->
+
+<label>Tipo de desenlace</label>
+<select id="desenlace" name="desenlace">
+<option value="">Seleccione</option>
+<option value="1">No hubo daño</option>
+<option value="4.2">Requiere intervención médica o quirurgica</option>
+<option value="4.4">Hospitalización inicial o prolongada</option>
+<option value="4.6">Daño de una función o estructura corporal</option>
+<option value="4.8">Enfermedad o daño que amenace la vida</option>
+<option value="5">Muerte</option>
+</select>
 
 
 <!-- ========================= -->
@@ -447,45 +448,115 @@ Seleccione un producto primero...
 <input type="text" id="severidad_total" readonly>
 
 <!-- ========================= -->
+<!-- Criterios_de_graduación -->
+<!-- ========================= -->
+
+
+<label>CRITERIOS DE GRADUACIÓN</label>
+
+<div style="background:#f5f5f5;padding:10px;border-radius:5px; margin-top:5px;">
+
+<div style="margin-bottom:15px;">
+Daño o peligro generado a los intereses jurídicos protegidos por la ley. (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
+Beneficio económico obtenido por el infractor, ya sea para sí mismo o para un tercero. (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
+Reincidencia en la comisión de la infracción. (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
+Resistencia, negativa u obstrucción a la acción investigadora o de supervisión. (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
+Uso de medios fraudulentos o de personas interpuestas para ocultar la infracción o sus efectos. (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
+Grado de prudencia y diligencia con que se hayan atendido los deberes o aplicado las normas legales pertinentes. (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
+Renuencia o desacato en el cumplimiento de órdenes impartidas por la autoridad competente. (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
+Reconocimiento o aceptación expresa de la infracción antes del decreto de pruebas. (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+<!-- ========================= -->
 <!-- AGRAVANTES -->
 <!-- ========================= -->
 
 <label>AGRAVANTES</label>
 
-<div style="background:#f5f5f5;padding:10px;border-radius:5px;">
+<div style="background:#f5f5f5;padding:10px;border-radius:5px; margin-top:5px;">
 
-<input type="checkbox" name="agravantes" value="0.05">
+<div style="margin-bottom:15px;">
 Daño probado (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
 Con riesgo (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
 Beneficio económico probado (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
 Cualquier acto de resistencia, negativa u obstrucción a la acción investigadora o de supervisión (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
 Cualquier uso de medios fraudulentos o de persona interpuesta para ocultar la infracción o sus efectos (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
 No existe prudencia y/o diligencia (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
 Cualquier acto de renuencia o desacato en el cumplimiento de ordenes impartidas (medida sanitaria) (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
 Reincidir en la comisión de la falta (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-bottom:15px;">
 Realizar el hecho con pleno conocimiento de sus efectos dañosos (0.05)<br>
-
 <input type="checkbox" name="agravantes" value="0.05">
-Infringir varias disposiciones sanitarias con la misma conducta (0.05)<br>
+</div>
 
+<div style="margin-bottom:15px;">
+Infringir varias disposiciones sanitarias con la misma conducta (0.05)<br>
+<input type="checkbox" name="agravantes" value="0.05">
+</div>
+
+<div style="margin-top:15px; border-top:1px solid #ccc; padding-top:10px;">
+No tiene agravantes (0)<br>
 <input type="checkbox" name="agravantes" value="0">
-No tiene agravantes (0)
+</div>
 
 </div>
 
@@ -494,92 +565,69 @@ No tiene agravantes (0)
 <!-- ATENUANTES -->
 <!-- ========================= -->
 
-<label>ATENUANTES</label>
 
-<div style="background:#f5f5f5;padding:10px;border-radius:5px;">
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="background:#f5f5f5;padding:10px;border-radius:5px; margin-top:5px;">
+
+<div style="margin-bottom:15px;">
 No se demostro beneficio economico (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="margin-bottom:15px;">
 Requerimientos administrativos (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="margin-bottom:15px;">
 No existe prueba de resistencia negativa u obstrucción (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="margin-bottom:15px;">
 No Reincidio En la comisión de la misma falta (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="margin-bottom:15px;">
 Aceptación Expresa De La Infracción (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="margin-bottom:15px;">
 El no haber sido sancionado anteriormente o no haber sido objeto de medida sanitaria de seguridad (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante"value="-0.05">
+<div style="margin-bottom:15px;">
 Procurar por iniciativa propia, resarcir el daño o compensar el perjuicio causado, antes de la iniciación del procedimiento sancionatorio (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="margin-bottom:15px;">
 Informar la falta voluntariamente antes de que produzca daño a la salud individual o colectiva. (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="margin-bottom:15px;">
 El no haber sido sancionado anteriormente o no haber sido objeto de medida sanitaria de seguridad, en los últimos tres años(-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante" value="-0.05">
+<div style="margin-bottom:15px;">
 El confesar la falta voluntariamente antes de que se produzca daño en la salud individual o colectiva. (-0.05)<br>
+<input type="checkbox" name="agravantes" value="-0.05">
+</div>
 
-<input type="checkbox" name="atenuante"value="0">
-No tiene atenuantes (0)
+<div style="margin-top:15px; border-top:1px solid #ccc; padding-top:10px;">
+No tiene atenuantes (0)<br>
+<input type="checkbox" name="agravantes" value="0">
+</div>
 
 </div>
+
 <br>
-<!-- ========================= -->
-<!-- Criterios_de_graduación -->
-<!-- ========================= -->
 
-
-<label>CRITERIOS-DE-GRADUACIÓN</label>
-
-<div style="background:#f5f5f5;padding:10px;border-radius:5px;">
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Rehuir la responsabilidad o atribuírsela sin razones a otro u otros. (0.05)<br>
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Cometer la falta para ocultar otra.(0.05)<br>
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Incurrir en la infracción y/o sus modalidades, con premeditación. (0.05)<br>
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Daño o peligro generado a los intereses jurídicos tutelados. (0.05)<br>
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Beneficio económico obtenido por el infractor para sí o a favor de un tercero.(0.05)<br>
-
-
-
-<input type="checkbox" name="Criterios_de_graduación"value="0.05">
-Reincidencia en la comisión de la infracción.(0.05)<br>
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Resistencia, negativa u obstrucción a la acción investigadora o de supervisión. (0.05)<br>
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Utilización de medios fraudulentos o utilización de persona interpuesta para ocultar la infracción u ocultar sus efectos.(0.05)<br>
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Grado de prudencia y diligencia con que se hayan atendido los deberes o se hayan aplicado las normas legales pertinentes. (0.05)<br>
-
-
-<input type="checkbox" name="Criterios_de_graduación" value="0.05">
-Renuencia o desacato en el cumplimiento de las órdenes impartidas por la autoridad competente. (0.05)<br>
-
-<input type="checkbox" name="Criterios_de_graduación" value="0">
-Reconocimiento o aceptación expresa de la infracción antes del decreto de pruebas (0)<br>
-
-</div>
-<br>
 <label>Afectación</label>
 <input type="text" id="afectacion" readonly>
 
@@ -741,8 +789,10 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento en los requisitos de saneamiento", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento en los requisitos de almacenamiento, distribución, transporte y comercialización de alimentos y materias primas para alimentos", riesgo: "Moderado", valor: 3 },
         { nombre: "No cuenta con registro sanitario, permiso sanitario y notificación sanitaria", riesgo: "Alto", valor: 5 },
-        { nombre: "Incumplimiento de rotulado o etiquetado de alimentos", riesgo: "Bajo", valor: 1 },
-        { nombre: "Incumplimiento en los requisitos de rotulado o etiquetado nutricional", riesgo: "Bajo", valor: 1 },
+        
+        { nombre: "Incumplimiento de rotulado o etiquetado de alimentos,(resolución 5109 2005)", riesgo: "Bajo", valor: 1 },
+        { nombre: "Incumplimiento sellos frontales,(resolución 254 2023)", riesgo: "Bajo", valor: 1 },
+        { nombre: "Incumplimiento en los requisitos de rotulado o etiquetado nutricional,(resolución 0810 2021)", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento de las condiciones para los procesos de obtención, envasado y comercialización de agua potable", riesgo: "Alto", valor: 5 }
     ],
     "Bebidas_Alcohólicas": [
@@ -2877,7 +2927,7 @@ function calcularMultaFrontend() {
     
     let laboratorio = parseFloat(document.getElementById('laboratorio').value) || 1;
     let capacidadEconomica = parseFloat(document.getElementById('ponderacion_final').value) || 0.05;
-    let topeMax = 100;
+    
     let smmlv = parseFloat(document.getElementById('smmlv').value);
     let uvb = parseFloat(document.getElementById('uvb').value) || 12110;
     let factorExtra = 1.0;
@@ -2893,12 +2943,19 @@ function calcularMultaFrontend() {
     let ajusteNeto = parseFloat(document.getElementById('afectacion').value) || 0;
     
     // 5. Multa final
-    let multaFinalSmlmv = fdSMLMV * (1 + ajusteNeto) * capacidadEconomica * factorExtra;
-    if (multaFinalSmlmv > topeMax) multaFinalSmlmv = topeMax;
-    multaFinalSmlmv = Math.round(multaFinalSmlmv * 100) / 100;
-    let multaFinalPesos = multaFinalSmlmv * smmlv;
-    let multaFinalUVB = convertirMultaAUVB(multaFinalSmlmv, smmlv, uvb);
-    
+  let multaFinalSmlmv = fdSMLMV * (1 + ajusteNeto) * capacidadEconomica * factorExtra;
+
+// NUEVOS LÍMITES: mínimo 5 SMLMV, máximo 10000 SMLMV
+if (multaFinalSmlmv < 5) {
+    multaFinalSmlmv = 5;
+}
+if (multaFinalSmlmv > 10000) {
+    multaFinalSmlmv = 10000;
+}
+
+multaFinalSmlmv = Math.round(multaFinalSmlmv * 100) / 100;
+let multaFinalPesos = multaFinalSmlmv * smmlv;
+let multaFinalUVB = convertirMultaAUVB(multaFinalSmlmv, smmlv, uvb);
     // Determinar icono de riesgo
     let riesgoIcono = "", riesgoTexto = "";
     if (conducta === 5) { riesgoIcono = "🔴"; riesgoTexto = "Alto"; }
@@ -6819,10 +6876,7 @@ function generarPDF() {
                 <p style="font-size: 11px; margin-top: 10px;">Revisó: ${nombreProfesional}</p>
             </div>
 
-            <div class="footer" style="margin-top: 30px; text-align: center; font-size: 10px; color: #999; border-top: 1px solid #ddd; padding-top: 10px;">
-                <p>Motor GUR - Módulo de Tasación de Multas - INVIMA</p>
-            </div>
-
+         
             
             
             
