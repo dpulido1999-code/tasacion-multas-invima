@@ -206,7 +206,7 @@ button:hover{
 <label>Tamaño de establecimiento</label>
 <select id="Tamaño_establecimiento" name="Tamaño_establecimiento">
 <option value="">Seleccione</option>
-<option value="Pymes">Pymes</option>
+
 <option value="Microempresa">Microempresa</option>
 <option value="Pequeña empresa">Pequeña empresa</option>
 <option value="Mediana empresa">Mediana empresa</option>
@@ -3112,7 +3112,7 @@ document.getElementById("tipo_persona").addEventListener("change", function(){
     } else if(tipo === "juridica"){
         contSisben.style.display = "none";
         contEmpresa.style.display = "block";
-        empresa.innerHTML += "<option value='0.1'>Pymes</option>";
+       
         empresa.innerHTML += "<option value='0.25'>Microempresa</option>";
         empresa.innerHTML += "<option value='0.5'>Pequeña</option>";
         empresa.innerHTML += "<option value='0.75'>Mediana</option>";
