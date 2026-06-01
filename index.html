@@ -6572,7 +6572,10 @@ function generarPDF() {
     let ceValor = parseFloat(ponderacionFinal);
     if (isNaN(ceValor)) ceValor = 0.05;
     let multaCalculada = fdFinal * ajusteNeto * ceValor;
-    if (multaCalculada > 100) multaCalculada = 100;
+    if (multaCalculada < 5) { 
+        multaCalculada = 5;}
+    if (multaCalculada > 10000) { 
+        multaCalculada = 10000;}
     multaCalculada = Math.round(multaCalculada * 100) / 100;
     let smmlvNum = parseFloat(smmlv);
     let multaPesosCalculada = multaCalculada * smmlvNum;
