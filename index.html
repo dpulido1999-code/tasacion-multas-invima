@@ -6844,7 +6844,7 @@ function generarPDF() {
                 <div class="formula">
                     Multa = ${multaCalculada.toFixed(2)} × $${smmlvNum.toLocaleString('es-CO')} = <strong>$${multaPesosCalculada.toLocaleString('es-CO')}</strong>
                 </div>
-                ${multaCalculada >= 100 ? '<p><em>⚠️ Se aplicó el tope máximo de 100 SMLMV establecido por el sistema.</em></p>' : ''}
+                ${multaCalculada >= 10000 ? '<p><em>⚠️ Se aplicó el tope máximo de 10000 SMLMV establecido por el sistema.</em></p>' : ''}
                 <p><strong>En UVB (Ley 2294 de 2023):</strong></p>
                 <div class="formula">
                     Multa en UVB = $${multaPesosCalculada.toLocaleString('es-CO')} ÷ $${uvbPesos.toLocaleString('es-CO')} = <strong>${multaUVBCalculada} UVB</strong>
