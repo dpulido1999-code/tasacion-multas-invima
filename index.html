@@ -1,4 +1,3 @@
-D.P.S
 <!DOCTYPE html>
 <html>
 <head>
@@ -89,7 +88,7 @@ button:hover{
          style="height: 80px; object-fit: contain;">
 </div>
 
-<h2>Dirección de Responsabilidad Sanitaria- Módulo tasación de multas</h2>
+<h2>Dirección de Responsabilidad Sanitaria- Módulo Tasación de Multas</h2>
 
 
 <!-- ========================= -->
@@ -105,10 +104,6 @@ button:hover{
 
 <label for="fecha_visita">Fecha de visita (DD/MM/AAAA):</label>
 <input type="date" id="fecha_visita" name="fecha_visita" required>
-
-
-
-
 
 <label for="id_establecimiento">ID del Establecimiento:</label>
 <input type="text" id="id_establecimiento" name="id_establecimiento" placeholder="Ej: EST-001" required>
@@ -179,7 +174,6 @@ button:hover{
     <option value="GRUPO DE PROCESOS SANCIONATORIOS DE ALIMENTOS Y BEBIDAS">GRUPO DE PROCESOS SANCIONATORIOS DE ALIMENTOS Y BEBIDAS</option>
     <option value="GRUPO DE PROCESOS SANCIONATORIOS DE MEDICAMENTOS, INSUMOS Y OTROS PRODUCTOS">GRUPO DE PROCESOS SANCIONATORIOS DE MEDICAMENTOS, INSUMOS Y OTROS PRODUCTOS</option>
     <option value="GRUPO DE PROCESOS SANCIONATORIOS DE PUBLICIDAD">GRUPO DE PROCESOS SANCIONATORIOS DE PUBLICIDAD</option>
-
 </select>
 
 <label for="nombre_profesional">Nombre del profesional:</label>
@@ -189,42 +183,29 @@ button:hover{
 <input type="text" id="cargo_profesional" name="cargo_profesional" placeholder="Ej: Coordinador GTT Occidente 1" required>
 
 <!-- ========================= -->
-<!-- PRODUCTO -->
-<!-- ========================= -->
-
-
-
-<!-- ========================= -->
-<!-- afectación -->
-<!-- ========================= -->
-
-
-<!-- ========================= -->
 <!-- Tamaño empresa -->
 <!-- ========================= -->
 
 <label>Tamaño de establecimiento</label>
 <select id="Tamaño_establecimiento" name="Tamaño_establecimiento">
 <option value="">Seleccione</option>
-
 <option value="Microempresa">Microempresa</option>
 <option value="Pequeña empresa">Pequeña empresa</option>
 <option value="Mediana empresa">Mediana empresa</option>
 <option value="Gran empresa">Gran empresa</option>
-<option value="Establecimiento que es proveedor social del estado">Establecimiento que es proveedor social del estado</option>
-<option value="Eventos Adversos en Salud Publica (Alertas, ETA) en los últimos 3 años">Eventos Adversos en Salud Publica (Alertas, ETA) en los últimos 3 años</option>
 </select>
+
 <label>SMMLV (año actual)</label>
 <div style="display:flex; align-items:center;">
-  <input type="number" id="smmlv" value="877803">
+  <input type="number" id="smmlv" value="1750905">
   <span style="margin-left:5px;">PESOS</span>
 </div>
+
 <label> UVB</label>
 <div style="display:flex; align-items:center; margin-top:10px;">
   <input type="number" id="uvb" value="12110" step="100">
   <span style="margin-left:5px;">PESOS (UVB - Ley 2294/2023)</span>
 </div>
-
 
 <label>Tipo de persona</label>
 <select id="tipo_persona">
@@ -232,10 +213,26 @@ button:hover{
   <option value="natural">Persona natural</option>
   <option value="juridica">Persona jurídica</option>
 </select>
-<label>Utilidades (Capacidad económica)</label>
-<select id="utilidades">
+
+<label>Tipo de entidad</label>
+<select id="tipo_entidad">
+  <option value="">Seleccione</option>
+  <option value="departamento">Departamento</option>
+  <option value="municipio">Municipio</option>
+  <option value="hospital">Hospital</option>
+  <option value="privada">Privada</option>
+ 
+</select>
+
+
+
+<label>Categoría</label>
+<select id="categoria_entidad">
   <option value="">Seleccione</option>
 </select>
+
+
+
 
 <!-- SISBEN -->
 <div id="contenedor_sisben" style="display:none;">
@@ -253,102 +250,68 @@ button:hover{
   </select>
 </div>
 
-<label>Tipo de entidad</label>
-<select id="tipo_entidad">
-  <option value="">Seleccione</option>
-  <option value="departamento">Departamento</option>
-  <option value="municipio">Municipio</option>
-  <option value="hospital">Hospital</option>
-</select>
-
-<br><br>
-
-<label>Categoría</label>
-<select id="categoria_entidad">
+<label>Capacidad económica (Capital pagado-RUES)</label>
+<select id="utilidades">
   <option value="">Seleccione</option>
 </select>
 
-<br><br>
+
+
+
 
 <label for="ponderacion_final">Ponderación final</label>
 <input type="text" id="ponderacion_final" readonly autocomplete="off">
 
-
 <!-- ========================= -->
-<!-- IRA (NUEVO CAMPO MANUAL) --> 
+<!-- IRA -->
 <!-- ========================= -->
 <label>IRA (Índice de riesgo agregado)</label>
 <input type="number" id="ira" name="ira" step="0.01" value="13.00" placeholder="Ej: 1.00, 1.5, 2.0">
- 
-
 
 <!-- ========================= -->
-<!-- severidad-->
+<!-- medidas sanitarias -->
 <!-- ========================= -->
-
-
-<!-- ========================= -->
-<!-- medidas sanitarias-->
-<!-- ========================= -->
-
 <label>Medidas sanitarias aplicadas</label>
-
 <select name="medida" id="medida" multiple size="3">
-
-<option value=5>
-Clausura temporal del establecimiento, que podrá ser total o parcial.
-</option>
-
-<option value=5>
-La suspensión parcial o total de trabajos o de servicios.
-</option>
-
-<option value=5>
-El decomiso de objetos y productos.
-</option>
-
-<option value=5>
-La destrucción o desnaturalización de artículos o productos, si es el caso.
-</option>
-
-<option value=5>
-La congelación o suspensión temporal de la venta o empleo de productos y objetos, mientras se toma una decisión definitiva al respecto.
-</option>
-
+<option value="0">Sin medida sanitaria.</option>
+<option value="3">Clausura temporal del establecimiento, que podrá ser total o parcial.</option>
+<option value="3">La suspensión parcial o total de trabajos o de servicios.</option>
+<option value="3">El decomiso de objetos y productos.</option>
+<option value="5">La destrucción o desnaturalización de artículos o productos, si es el caso.</option>
+<option value="1">La congelación o suspensión temporal de la venta o empleo de productos y objetos, mientras se toma una decisión definitiva al respecto.</option>
 </select>
 
 <label>Medida sanitaria final</label>
 <input type="text" id="medida_final" readonly>
-
 
 <!-- ========================= -->
 <!-- laboratorio -->
 <!-- ========================= -->
 <label>Laboratorio</label>
 <select name="laboratorio" id="laboratorio" required>
+<option value="0">0 - No aplica</option>    
 <option value="1">1 - Sin rechazo</option>
 <option value="5">5 - Con rechazo</option>
 </select>
 
 <!-- ========================= -->
-<!-- Direccion sanitaria -->
+<!-- Direccion misional -->
 <!-- ========================= -->
-
 <label>Dirección misional</label>
 <select id="direccion_misional" name="direccion_misional" required>
 <option value="">Seleccione</option>
 <option value="Alimentos">Dirección de alimentos y bebidas</option>
-<option value="Medicamentos">Dirección de medicamentos  y productos biologicos</option>
+<option value="Medicamentos">Dirección de medicamentos y productos biologicos</option>
 <option value="Cosmeticos">Dirección de cosméticos,aseo,plaguisidas y productos de higiene doméstica</option>
 <option value="Dispositivos_medicos">Dirección de dispositivos medicos y otras tecnologias</option>
 </select>
+
 <!-- ========================= -->
 <!-- PRODUCTO -->
 <!-- ========================= -->
 <label>Naturaleza del producto</label>
 <select name="tipo_producto" id="tipo_producto">
     <option value="">Seleccione</option>
-
     <optgroup label="Medicamentos">
         <option value="Fitoterapéuticos_de_venta_libre">Fitoterapéuticos de venta libre</option>
         <option value="Homeopáticos">Homeopáticos</option>
@@ -358,44 +321,61 @@ La congelación o suspensión temporal de la venta o empleo de productos y objet
         <option value="Bancos_de_sangre">Bancos de sangre</option>
         <option value="Suplementos_dietarios">Suplementos dietarios</option>
     </optgroup>
-
     <optgroup label="Cosméticos">
         <option value="Cosméticos">Cosméticos</option>
         <option value="Plaguicidas_de_uso_domestico">Plaguicidas de uso doméstico</option>
         <option value="Productos_de_aseo_e_higiene_doméstica_y_absorbente_de_higiene_personal">Productos de aseo e higiene doméstica y absorbente de higiene personal</option>
     </optgroup>
-
     <optgroup label="Dispositivos médicos">
         <option value="Dispositivos_médicos">Dispositivos médicos</option>
         <option value="Dispositivos_médicos_sobre_medida_para_la_salud_visual_y_ocular">Dispositivos sobre medida para salud visual y ocular</option>
         <option value="Reactivos_invitro">Reactivos invitro</option>
     </optgroup>
-
     <optgroup label="Alimentos">
         <option value="Alimentos">Alimentos</option>
         <option value="Bebidas_Alcohólicas">Bebidas Alcohólicas</option>
         <option value="Bebidas_energizantes">Bebidas energizantes</option>
-       
-        
     </optgroup>
     <optgroup label="Plantas de beneficio">
          <option value="Plantas_de_beneficio">Plantas de beneficio</option>
-      
     </optgroup>
 </select>
-<!-- ========================= -->
-<!-- CONDUCTAS DEPENDIENTES DEL PRODUCTO -->
-<!-- ========================= -->
-<label>Conductas infringidas</label>
 
+<!-- ========================= -->
+<!-- CONDUCTAS DEL PRODUCTO -->
+<!-- ========================= -->
+<label>📋 CONDUCTAS DEL PRODUCTO</label>
 <div id="conducta_producto" style="background:#f5f5f5;padding:10px;border-radius:5px;max-height:250px;overflow-y:auto;">
 Seleccione un producto primero...
 </div>
-<!-- ========================= -->
-<!-- Tipo de decenlace de la infracción-->
-<!-- ========================= -->
 
-<label>Tipo de desenlace</label>
+<!-- ========================= -->
+<!-- RIESGO PÚBLICO -->
+<!-- ========================= -->
+<label>⚠️ RIESGO PÚBLICO (Nivel de riesgo en publicidad)</label>
+<div id="riesgo_publico_container" style="background:#fff3e0;padding:10px;border-radius:5px;max-height:200px;overflow-y:auto;margin-bottom:15px;">
+</div>
+
+<!-- ========================= -->
+<!-- CONDUCTAS DE PUBLICIDAD -->
+<!-- ========================= -->
+<label>📢 NATURALEZA DE PUBLICIDAD</label>
+<select name="tipo_publicidad" id="tipo_publicidad">
+    <option value="">Seleccione</option>
+    <optgroup label="Publicidad del producto">
+        <option value="publicidad">Publicidad</option>
+    </optgroup>
+</select>
+
+<label>📢 CONDUCTAS DE PUBLICIDAD</label>
+<div id="conducta_publicidad" style="background:#e8f5e9;padding:10px;border-radius:5px;max-height:250px;overflow-y:auto;">
+Seleccione un tipo de publicidad primero...
+</div>
+<br><br>
+<!-- ========================= -->
+<!-- Tipo de desenlace -->
+<!-- ========================= -->
+<label>Materialización del riesgo</label>
 <select id="desenlace" name="desenlace">
 <option value="">Seleccione</option>
 <option value="1">No hubo daño</option>
@@ -405,12 +385,12 @@ Seleccione un producto primero...
 <option value="4.8">Enfermedad o daño que amenace la vida</option>
 <option value="5">Muerte</option>
 </select>
+  
 
 
 <!-- ========================= -->
 <!-- Tipo de establecimiento -->
 <!-- ========================= -->
-
 <label>Tipo de establecimiento</label>
 <select id="establecimiento" name="establecimiento">
 <option value="">Seleccione dirección primero</option>
@@ -425,21 +405,19 @@ Seleccione un producto primero...
 <option value="Plantas_de_beneficio">Plantas_de_beneficio</option>
 </select>
 
- <!-- ========================= -->
+<!-- ========================= -->
 <!-- Grupo de producto -->
 <!-- ========================= -->
-
 <label>Grupo de producto</label>
 <select id="grupo_producto">
 <option value="">Seleccione establecimiento</option>
 </select>
 
- <!-- ========================= -->
-<!-- riesgo -->
 <!-- ========================= -->
-
-<label>Riesgo</label>
-<select id="riesgo" multiple size="5" onchange="calcularSeveridad()"></select>
+<!-- riesgo del producto -->
+<!-- ========================= -->
+<label>⚡ RIESGO DEL PRODUCTO</label>
+<select id="riesgo" multiple size="5"></select>
 
 <label>Severidad</label>
 <input type="text" id="severidad" readonly>
@@ -448,190 +426,74 @@ Seleccione un producto primero...
 <input type="text" id="severidad_total" readonly>
 
 <!-- ========================= -->
-<!-- Criterios_de_graduación -->
+<!-- CRITERIOS DE GRADUACIÓN -->
 <!-- ========================= -->
-
-
-<label>CRITERIOS DE GRADUACIÓN</label>
-
+<label>CRITERIOS DE GRADUACIÓN APLICABLES DESFAVORABLEMENTE AL INVESTIGADO</label>
 <div style="background:#f5f5f5;padding:10px;border-radius:5px; margin-top:5px;">
-
 <div style="margin-bottom:15px;">
-Daño o peligro generado a los intereses jurídicos protegidos por la ley. (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+Daño o peligro generado a los intereses jurídicos protegidos por la ley. (+0.05)<br>
+<input type="checkbox" class="agravante" value="0.05" name="agravantes">
+</div>
+<div style="margin-bottom:15px;">
+Beneficio económico obtenido por el infractor (+0.05)<br>
+<input type="checkbox" class="agravante" value="0.05" name="agravantes">
+</div>
+<div style="margin-bottom:15px;">
+Reincidencia en la comisión de la infracción (+0.05)<br>
+<input type="checkbox" class="agravante" value="0.05" name="agravantes">
+</div>
+<div style="margin-bottom:15px;">
+Resistencia, negativa u obstrucción a la acción investigadora (+0.05)<br>
+<input type="checkbox" class="agravante" value="0.05" name="agravantes">
+</div>
+<div style="margin-bottom:15px;">
+Uso de medios fraudulentos (+0.05)<br>
+<input type="checkbox" class="agravante" value="0.05" name="agravantes">
+</div>
+<div style="margin-bottom:15px;">
+Renuencia o desacato en el cumplimiento de órdenes (+0.05)<br>
+<input type="checkbox" class="agravante" value="0.05" name="agravantes">
+</div>
 </div>
 
-<div style="margin-bottom:15px;">
-Beneficio económico obtenido por el infractor, ya sea para sí mismo o para un tercero. (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Reincidencia en la comisión de la infracción. (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Resistencia, negativa u obstrucción a la acción investigadora o de supervisión. (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Uso de medios fraudulentos o de personas interpuestas para ocultar la infracción o sus efectos. (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Grado de prudencia y diligencia con que se hayan atendido los deberes o aplicado las normas legales pertinentes. (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Renuencia o desacato en el cumplimiento de órdenes impartidas por la autoridad competente. (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Reconocimiento o aceptación expresa de la infracción antes del decreto de pruebas. (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-<!-- ========================= -->
-<!-- AGRAVANTES -->
-<!-- ========================= -->
-
-<label>AGRAVANTES</label>
-
+<label>CRITERIOS DE GRADUACIÓN APLICABLES FAVORABLEMENTE AL INVESTIGADO</label>
 <div style="background:#f5f5f5;padding:10px;border-radius:5px; margin-top:5px;">
-
 <div style="margin-bottom:15px;">
-Daño probado (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+Grado de prudencia y diligencia (-0.05)<br>
+<input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
-
 <div style="margin-bottom:15px;">
-Con riesgo (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+Reconocimiento o aceptación expresa de la infracción (-0.05)<br>
+<input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
-
 <div style="margin-bottom:15px;">
-Beneficio económico probado (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+La conducta o el infractor no han sido objeto de sanción anterior (-0.05)<br>
+<input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
-
 <div style="margin-bottom:15px;">
-Cualquier acto de resistencia, negativa u obstrucción a la acción investigadora o de supervisión (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+Obrar por sugerencia o indicación de un superior jerárquico (-0.05)<br>
+<input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
-
 <div style="margin-bottom:15px;">
-Cualquier uso de medios fraudulentos o de persona interpuesta para ocultar la infracción o sus efectos (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+Confesar la infracción antes de la imputación de cargos (-0.05)<br>
+<input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
-
 <div style="margin-bottom:15px;">
-No existe prudencia y/o diligencia (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+Reparar voluntariamente el daño causado (-0.05)<br>
+<input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
-
 <div style="margin-bottom:15px;">
-Cualquier acto de renuencia o desacato en el cumplimiento de ordenes impartidas (medida sanitaria) (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+Colaborar eficazmente con la investigación (-0.05)<br>
+<input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
-
 <div style="margin-bottom:15px;">
-Reincidir en la comisión de la falta (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
+Implementar voluntariamente medidas correctivas (-0.05)<br>
+<input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
+</div>
 </div>
 
-<div style="margin-bottom:15px;">
-Realizar el hecho con pleno conocimiento de sus efectos dañosos (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Infringir varias disposiciones sanitarias con la misma conducta (0.05)<br>
-<input type="checkbox" name="agravantes" value="0.05">
-</div>
-
-<div style="margin-top:15px; border-top:1px solid #ccc; padding-top:10px;">
-No tiene agravantes (0)<br>
-<input type="checkbox" name="agravantes" value="0">
-</div>
-
-</div>
-
-<br>
-<!-- ========================= -->
-<!-- ATENUANTES -->
-<!-- ========================= -->
-
-
-
-<div style="background:#f5f5f5;padding:10px;border-radius:5px; margin-top:5px;">
-
-<div style="margin-bottom:15px;">
-No se demostro beneficio economico (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Requerimientos administrativos (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-No existe prueba de resistencia negativa u obstrucción (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-No Reincidio En la comisión de la misma falta (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Aceptación Expresa De La Infracción (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-El no haber sido sancionado anteriormente o no haber sido objeto de medida sanitaria de seguridad (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Procurar por iniciativa propia, resarcir el daño o compensar el perjuicio causado, antes de la iniciación del procedimiento sancionatorio (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-Informar la falta voluntariamente antes de que produzca daño a la salud individual o colectiva. (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-El no haber sido sancionado anteriormente o no haber sido objeto de medida sanitaria de seguridad, en los últimos tres años(-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-bottom:15px;">
-El confesar la falta voluntariamente antes de que se produzca daño en la salud individual o colectiva. (-0.05)<br>
-<input type="checkbox" name="agravantes" value="-0.05">
-</div>
-
-<div style="margin-top:15px; border-top:1px solid #ccc; padding-top:10px;">
-No tiene atenuantes (0)<br>
-<input type="checkbox" name="agravantes" value="0">
-</div>
-
-</div>
-
-<br>
-
-<label>Afectación</label>
+<label>Afectación total</label>
 <input type="text" id="afectacion" readonly>
-
-
 
 <!-- ========================= -->
 <!-- BOTONES -->
@@ -641,8 +503,6 @@ No tiene atenuantes (0)<br>
 💾 Guardar Resultado
 </button>
 
-</form>
-
 <!-- ========================= -->
 <!-- RESULTADO -->
 <!-- ========================= -->
@@ -650,29 +510,31 @@ No tiene atenuantes (0)<br>
 <h3>Resultado del Cálculo</h3>
 <p><b>R (puntaje bruto):</b> <span id="resultado_r"></span></p>
 <p><b>FD (Factor Directo - Gumbel):</b> <span id="resultado_fd"></span> SMLMV</p>
-<p><b>Ajuste agravantes/atenuantes/criterios:</b> <span id="resultado_ajuste"></span></p>
+<p><b>Ajuste criterion de graduación:</b> <span id="resultado_ajuste"></span></p>
 <p><b>Factor capacidad económica (Ce):</b> <span id="resultado_ce"></span></p>
 <h3>Multa Final</h3>
 <p><b><span id="resultado_smlmv"></span> SMLMV</b></p>
 <p><b>$<span id="resultado_pesos"></span></b></p>
+<p><b>💰 <span id="resultado_uvb"></span> UVB</b> (Ley 2294/2023)</p>
 <p id="detalle_final" style="font-size:12px; color:#555;"></p>
-</div>
-
 </div>
 
 <script>
 // ============================================================
-// 1. DEFINICIÓN DE TABLAS (tus datos originales)
+// 1. DEFINICIÓN DE TABLAS
 // ============================================================
 
 const conductasPorProducto = {
     "Fitoterapéuticos_de_venta_libre": [
+
         { nombre: "Incumplimiento de las buenas prácticas de manufactura", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento de los requisitos de control de calidad", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento de los requisitos del envase, etiquetas y empaques de los productos fitoterapéuticos", riesgo: "Moderado", valor: 3 },
         { nombre: "No cuenta con registro sanitario, permiso sanitario y notificación sanitaria", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiemto de los requisitos de la publicidad de los medicamentos y productos fitoterapéuticos de venta sin prescripción facultativa o de venta libre", riesgo: "Moderado", valor: 3 },
-        { nombre: "No cuenta con Registro sanitario de los medicamentos homeopáticos de fabricación nacional", riesgo: "Alto", valor: 5 }
+        { nombre: "No cuenta con Registro sanitario de los medicamentos homeopáticos de fabricación nacional", riesgo: "Alto", valor: 5 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Homeopáticos": [
         { nombre: "Incumplimiento con las Buenas Prácticas de Manufactura de Medicamentos Homeopáticos", riesgo: "Alto", valor: 5 },
@@ -683,14 +545,20 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento en las condiciones de control de calidad de los medicamentos homeopáticos", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento en las condiciones generales para la preparación y dispensación de los medicamentos homeopáticos magistrales y oficinales", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento en las condiciones y requisitos de comercialización de los medicamentos homeopáticos y de los medicamentos homeopáticos magistrales y oficinales", riesgo: "Moderado", valor: 3 },
-        { nombre: "Incumplimiento en los requisitos de Etiquetas, rótulos y empaques de los medicamentos homeopáticos magistrales y oficinales", riesgo: "Moderado", valor: 3 }
+        { nombre: "Incumplimiento en los requisitos de Etiquetas, rótulos y empaques de los medicamentos homeopáticos magistrales y oficinales", riesgo: "Moderado", valor: 3 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Medicamentos": [
         { nombre: "Realizar actividades de preparación, adecuación y/o ajuste de dosis de medicamentos, por personal de enfermería, en áreas asistenciales, actividad que exclusivamente debe realizar un químico farmacéutico", riesgo: "Alto", valor: 5 },
-        { nombre: "Realizar actividades de preparación, adecuación y/o ajuste de dosis de medicamentos sin contar con el certificado de cumplimiento de buenas prácticas de elaboración otorgado por el INVIMA", riesgo: "Alto", valor: 5 }
+        { nombre: "Realizar actividades de preparación, adecuación y/o ajuste de dosis de medicamentos sin contar con el certificado de cumplimiento de buenas prácticas de elaboración otorgado por el INVIMA", riesgo: "Alto", valor: 5 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Medicamentos_de_venta_libre": [
-        { nombre: "Incumplimiento de los requisitos de la publicidad de medicamentos y productos fitoterapéuticos de venta sin prescripción facultativa o de venta libre", riesgo: "Moderado", valor: 3 }
+        { nombre: "Incumplimiento de requisitos de publicidad", riesgo: "Moderado", valor: 3 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Gases_medicinales": [
         { nombre: "Incumplimiento de las buenas prácticas de manufactura de los gases medicinales y control de calidad", riesgo: "Alto", valor: 5 },
@@ -705,13 +573,17 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento en las disposiciones de materiales rechazados, productos retirados y devueltos", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento en las disposiciones de productos intermedios, a granel y acabados", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento en las condiciones de reactivos y patrones de referencia", riesgo: "Moderado", valor: 3 },
-        { nombre: "Incumplimiento en las disposiciones materiales de desecho", riesgo: "Bajo", valor: 1 }
+        { nombre: "Incumplimiento en las disposiciones materiales de desecho", riesgo: "Bajo", valor: 1 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Bancos_de_sangre": [
         { nombre: "Incumplimiento en la aplicación de las pruebas de anticuerpos", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplir la regulación, obtención, donación, presenvación, almacenamiento, transporte, destino y disposición final de componentes anátomicos y los procedimientos de trasplante o implante de los mismos a seres humanos", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento en los parámetros que aseguran la garantía de la calidad de la sangre según normativa", riesgo: "Alto", valor: 5 },
-        { nombre: "Incumplir el Manual de Normas Técnicas, Administrativas y de Procedimientos para Bancos de Sangre", riesgo: "Alto", valor: 5 }
+        { nombre: "Incumplir el Manual de Normas Técnicas, Administrativas y de Procedimientos para Bancos de Sangre", riesgo: "Alto", valor: 5 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Cosméticos": [
         { nombre: "Incumplimiento de normas de reglamento para el control y vigilancia sanitaria de los productos cosméticos, así como de los establecimientos encargados de su producción o comercialización", riesgo: "Moderado", valor: 3 },
@@ -725,12 +597,16 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento con los requisitos y procedimientos armonizados que deben cumplir los productos cosméticos originarios de los Países Miembros y de terceros países", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento a los requisitos régimen de registros sanitarios automáticos o inmediatos", riesgo: "Moderado", valor: 3 },
         { nombre: "No cuenta con registro sanitario, permiso sanitario y notificación sanitaria", riesgo: "Alto", valor: 5 },
-        { nombre: "Incumplimiento a lo dispuesto en el Decreto 2333 de 1998, respecto a la acreditación ante la autoridad sanitaria respectiva", riesgo: "Moderado", valor: 3 }
+        { nombre: "Incumplimiento a lo dispuesto en el Decreto 2333 de 1998, respecto a la acreditación ante la autoridad sanitaria respectiva", riesgo: "Moderado", valor: 3 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Plaguicidas_de_uso_domestico": [
         { nombre: "Incumplimiento a las normas de control y la vigilancia epidemiológica en el uso y manejo de plaguicidas", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento al modelo de Inspección, Vigilancia y Control para los productos de uso y consumo humano", riesgo: "Moderado", valor: 3 },
-        { nombre: "Incumplimiento de las normas de clasificación toxicológica de un plaguicida", riesgo: "Alto", valor: 5 }
+        { nombre: "Incumplimiento de las normas de clasificación toxicológica de un plaguicida", riesgo: "Alto", valor: 5 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Productos_de_aseo_e_higiene_doméstica_y_absorbente_de_higiene_personal": [
         { nombre: "No cuenta con registro sanitario, permiso sanitario y notificación sanitaria", riesgo: "Alto", valor: 5 },
@@ -743,7 +619,9 @@ const conductasPorProducto = {
         { nombre: "No contar con certificado de capacidad de producción", riesgo: "Moderado", valor: 3 },
         { nombre: "No cumplir con requisitos en el rotulado y envasado", riesgo: "Bajo", valor: 1 },
         { nombre: "Incumplimiento en las normas de publicidad", riesgo: "Bajo", valor: 1 },
-        { nombre: "Incumplir normas de calidad en la fabricación: producto alterado y fraudulento", riesgo: "Alto", valor: 5 }
+        { nombre: "Incumplir normas de calidad en la fabricación: producto alterado y fraudulento", riesgo: "Alto", valor: 5 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Dispositivos_médicos": [
         { nombre: "Incumplimiento de los requisitos técnicos y sanitarios para la inscripción", riesgo: "Alto", valor: 5 },
@@ -760,14 +638,18 @@ const conductasPorProducto = {
         { nombre: "No contar con certificado de aprobación o constancia de control o registro sanitario para la importación o adquisición de equipos biomédicos", riesgo: "Alto", valor: 5 },
         { nombre: "No contar con el concepto técnico por parte del Invima para la importación, adquisición o elaboración de equipos biomédicos controlados", riesgo: "Alto", valor: 5 },
         { nombre: "No cuenta con registro sanitario, permiso sanitario y notificación sanitaria", riesgo: "Alto", valor: 5 },
-        { nombre: "Incumplimiento de las condiciones de los envases, etiquetas, rótulos y empaques", riesgo: "Moderado", valor: 3 }
+        { nombre: "Incumplimiento de las condiciones de los envases, etiquetas, rótulos y empaques", riesgo: "Moderado", valor: 3 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Dispositivos_médicos_sobre_medida_para_la_salud_visual_y_ocular": [
         { nombre: "Incumplimiento en las condiciones técnico-sanitarias de los establecimientos en los que se comercialicen y elaboren dispositivos médicos sobre medida para la salud visual y ocular", riesgo: "Moderado", valor: 3 },
         { nombre: "No cuenta con certificados de capacidad de producción, adecuación y dispensación de los dispositivos médicos sobre medida para la salud visual y ocular", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento en dispensación de dispositivos médicos sobre medida para la salud visual y ocular", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento en las condiciones de empaque, etiquetado y publicidad", riesgo: "Moderado", valor: 3 },
-        { nombre: "No presentar el plan de implementación gradual del Reglamento Técnico sobre los requisitos que deben cumplir los dispositivos médicos sobre medida para la salud visual y ocular", riesgo: "Moderado", valor: 3 }
+        { nombre: "No presentar el plan de implementación gradual del Reglamento Técnico sobre los requisitos que deben cumplir los dispositivos médicos sobre medida para la salud visual y ocular", riesgo: "Moderado", valor: 3 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Reactivos_invitro": [
         { nombre: "Incumplimiento de las buenas prácticas de manufactura (BPM) para los reactivos de diagnóstico in vitro", riesgo: "Alto", valor: 5 },
@@ -776,7 +658,9 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento en las condiciones de publicidad", riesgo: "Bajo", valor: 1 },
         { nombre: "Incumplimiento en los procesos de régimen de control", riesgo: "Moderado", valor: 3 },
         { nombre: "No implementar el programa nacional de Reactivovigilancia", riesgo: "Alto", valor: 5 },
-        { nombre: "Incumplir condiciones de almacenamiento y/o Acondicionamiento para Reactivos de Diagnóstico In Vitro", riesgo: "Moderado", valor: 3 }
+        { nombre: "Incumplir condiciones de almacenamiento y/o Acondicionamiento para Reactivos de Diagnóstico In Vitro", riesgo: "Moderado", valor: 3 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Alimentos": [
         { nombre: "No cumplimiento de Buenas Prácticas de Manufactura", riesgo: "Alto", valor: 5 },
@@ -793,7 +677,9 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento de rotulado o etiquetado de alimentos,(resolución 5109 2005)", riesgo: "Bajo", valor: 1 },
         { nombre: "Incumplimiento sellos frontales,(resolución 254 2023)", riesgo: "Bajo", valor: 1 },
         { nombre: "Incumplimiento en los requisitos de rotulado o etiquetado nutricional,(resolución 0810 2021)", riesgo: "Alto", valor: 5 },
-        { nombre: "Incumplimiento de las condiciones para los procesos de obtención, envasado y comercialización de agua potable", riesgo: "Alto", valor: 5 }
+        { nombre: "Incumplimiento de las condiciones para los procesos de obtención, envasado y comercialización de agua potable", riesgo: "Alto", valor: 5 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Bebidas_Alcohólicas": [
         { nombre: "No declarar las leyendas en recipientes de bebidas alcohólicas (Artículo 16) El exceso de alcohol es perjudicial para la salud", riesgo: "Bajo", valor: 1 },
@@ -804,7 +690,9 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento en las condiciones de publicidad", riesgo: "Bajo", valor: 1 },
         { nombre: "No cuenta con registro sanitario, permiso sanitario y notificación sanitaria", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento en los requisitos sanitarios para el almacenamiento, distribución, transporte y comercialización", riesgo: "Moderado", valor: 3 },
-        { nombre: "No realizar la advertencia en la publicidad, identificación o promoción de bebidas alcohólicas sobre la prohibición de expendio a menores de edad", riesgo: "Moderado", valor: 3 }
+        { nombre: "No realizar la advertencia en la publicidad, identificación o promoción de bebidas alcohólicas sobre la prohibición de expendio a menores de edad", riesgo: "Moderado", valor: 3 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Bebidas_energizantes": [
         { nombre: "Incumplimiento de las condiciones sanitarias", riesgo: "Moderado", valor: 3 },
@@ -813,6 +701,8 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento de los requisitos microbiológicos", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimiento de los requisitos de aditivos permitidos en las bebidas energizantes", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento de las condiciones de envase, etiquetado, rotulado y publicidad", riesgo: "Bajo", valor: 1 },
+        { nombre: "No cuenta con registro sanitario", riesgo: "Alto", valor: 5 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
         { nombre: "No cuenta con registro sanitario", riesgo: "Alto", valor: 5 }
     ],
     "Plantas_de_beneficio": [
@@ -822,7 +712,9 @@ const conductasPorProducto = {
         { nombre: "Incumplimiento de estándares sanitarios para el funcionamiento de las plantas de beneficio animal de las especies bovina, bufalina y porcina", riesgo: "Alto", valor: 5 },
         { nombre: "Incumplimientos al procedimiento para la elaboración, ajuste y seguimiento de los Planes Graduales de Cumplimiento", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento de las normas contenidas en el Sistema Oficial de Inspección, Vigilancia y Control de la Carne y Productos Cárnicos Comestibles", riesgo: "Alto", valor: 5 },
-        { nombre: "Incumplimiento al reglamento técnico de Productos Cárnicos Comestibles y Derivados Cárnicos", riesgo: "Alto", valor: 5 }
+        { nombre: "Incumplimiento al reglamento técnico de Productos Cárnicos Comestibles y Derivados Cárnicos", riesgo: "Alto", valor: 5 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Suplementos_dietarios": [
         { nombre: "Incumplimiento de los requisitos de fabricación, comercialización, formas de presentación y declaraciones de propiedades nutricionales y en salud de los suplementos dietarios", riesgo: "Moderado", valor: 3 },
@@ -836,9 +728,25 @@ const conductasPorProducto = {
         { nombre: "No cuenta con registro sanitario, permiso sanitario y notificación sanitaria", riesgo: "Alto", valor: 5 },
         { nombre: "No realizar la renovación o modificación del registro sanitario", riesgo: "Moderado", valor: 3 },
         { nombre: "Incumplimiento a los requisitos de publicidad de los suplementos dietarios", riesgo: "Bajo", valor: 1 },
-        { nombre: "No presentar en las etiquetas y rótulos de envases y empaques y en la publicidad información que confunda, exagere o engañe", riesgo: "Moderado", valor: 3 }
+        { nombre: "No presentar en las etiquetas y rótulos de envases y empaques y en la publicidad información que confunda, exagere o engañe", riesgo: "Moderado", valor: 3 },
+        { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+        { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ]
 };
+
+const conductapublicidad = {
+    "publicidad": [
+        { nombre: "🟢 Bajo - Infracción publicitaria leve", riesgo: "Bajo", valor: 1 },
+        { nombre: "🟡 Medio - Publicidad engañosa con impacto limitado", riesgo: "Moderado", valor: 3 },
+        { nombre: "🔴 Alto - Publicidad engañosa grave", riesgo: "Alto", valor: 5 }
+    ]
+};
+
+const conductasRiesgoPublico = [
+    { nombre: "🟢 RIESGO PÚBLICO BAJO - Afectación mínima a la salud pública", riesgo: "Bajo", valor: 1 },
+    { nombre: "🟡 RIESGO PÚBLICO MEDIO - Afectación moderada a la salud pública", riesgo: "Moderado", valor: 3 },
+    { nombre: "🔴 RIESGO PÚBLICO ALTO - Afectación grave a la salud pública", riesgo: "Alto", valor: 5 }
+];
 
 // TABLA DE SEVERIDAD
 let tablaSeveridad = {
@@ -2795,25 +2703,19 @@ Vacunas_Fase_II: 4.5,
 Vacunas_Fase_III: 4.0,
 Vacunas_Fase_IV: 3.0,
 
-
-
-
-
-
-
-
-
-
 };
 
-// ============================================================
-// 2. FUNCIONES DE CÁLCULO (GUMBEL Y MULTAS)
-// ============================================================
+function convertirMultaAUVB(multaSMLMV, valorSMLMV, valorUVB) {
+    let multaPesos = multaSMLMV * valorSMLMV;
+    let multaUVB = multaPesos / valorUVB;
+    return Math.round(multaUVB * 100) / 100;
+}
 
+// ============================================================
+// 2. FUNCIÓN DE CÁLCULO PRINCIPAL (CORREGIDA Y COMPLETA)
+// ============================================================
 // Parámetros Gumbel para Alimentos (según Excel)
-const GUMBEL_MU = 25;
-const GUMBEL_BETA = 5;
-const GUMBEL_MAX_SMLMV = 50;
+
 // ============================================================
 // FUNCIÓN GUMBEL CORREGIDA
 // ============================================================
@@ -2822,9 +2724,7 @@ function gumbelTransform(R, direccionMisional) {
     const tablaGumbel = [
         { r: 1.0, fd: 0.9 },
         { r: 1.5, fd: 2.5 },
-        
         { r: 2.0, fd: 5.0 },
-
         { r: 2.5, fd: 9.0 },
         { r: 3.0, fd: 15.0 },
         { r: 3.2, fd: 18.5 },
@@ -2855,10 +2755,9 @@ function gumbelTransform(R, direccionMisional) {
         "Dispositivos_medicos": 3.0
     };
     
-    let factor = factoresEscala[direccionMisional] || 1.0;
-    
-    // Asegurar que R esté dentro del rango de la tabla
     let rLimitado = Math.min(5.0, Math.max(1.0, R));
+    let factor = factoresEscala[direccionMisional] || 1.0;
+    let fd = 0;
     
     // Búsqueda de interpolación CORRECTA
     for (let i = 0; i < tablaGumbel.length - 1; i++) {
@@ -2869,122 +2768,271 @@ function gumbelTransform(R, direccionMisional) {
             let fd2 = tablaGumbel[i+1].fd;
             
             // Interpolación lineal
-            let fd = fd1 + (fd2 - fd1) * (rLimitado - r1) / (r2 - r1);
+            fd = fd1 + (fd2 - fd1) * (rLimitado - r1) / (r2 - r1);
             
             // Redondear a 2 decimales
             fd = Math.round(fd * 100) / 100;
             
             // Aplicar factor de escala y devolver
-            let resultado = fd * factor;
-            return Math.round(resultado * 100) / 100;
+            return Math.round(fd * factor * 100) / 100;
         }
     }
     
-    // Fallback seguro (no debería llegar aquí)
-    return 0.5 * factor;
+    // Si R es exactamente 5.0
+    if (rLimitado >= 5.0) {
+        fd = 50.0;
+        return Math.round(fd * factor * 100) / 100;
+    }
+    
+    // Fallback: usar el valor más bajo
+    fd = 0.9;
+    return Math.round(fd * factor * 100) / 100;
 }
-// ============================================================
-// 3. CONVERSOR SMLMV A UVB - VERSIÓN DINÁMICA (SOLO UNA)
-// ============================================================
-const convertirMultaAUVB = function(multaSMLMV, smmlvPesos, uvbPesos) {
-    let multaPesos = multaSMLMV * smmlvPesos;
-    let multaUVB = multaPesos / uvbPesos;
-    return Math.round(multaUVB * 100) / 100;
-};
 
+function cargarRiesgoPublico() {
+    const container = document.getElementById('riesgo_publico_container');
+    if (!container) return;
+    container.innerHTML = "";
+    conductasRiesgoPublico.forEach(c => {
+        const label = document.createElement("label");
+        label.style.display = "block";
+        label.style.marginBottom = "8px";
+        label.style.padding = "6px";
+        label.style.borderRadius = "6px";
+        label.style.cursor = "pointer";
+        if (c.riesgo === "Alto") {
+            label.style.backgroundColor = "#fee2e2";
+            label.style.borderLeft = "4px solid #dc2626";
+        } else if (c.riesgo === "Moderado") {
+            label.style.backgroundColor = "#fef3c7";
+            label.style.borderLeft = "4px solid #f59e0b";
+        } else {
+            label.style.backgroundColor = "#d1fae5";
+            label.style.borderLeft = "4px solid #10b981";
+        }
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = "riesgo_publico_item";
+        checkbox.value = c.valor;
+        checkbox.setAttribute("data-nombre", c.nombre);
+        checkbox.setAttribute("data-riesgo", c.riesgo);
+        // ✅ CAMBIO AQUÍ: llama a ambas funciones
+        checkbox.addEventListener('change', function() {
+            calcularSeveridadTotal();  // Actualiza el campo severidad_total visible
+            calcularMultaFrontend();   // Recalcula la multa
+        });
+        label.appendChild(checkbox);
+        let texto = c.nombre;
+        if (c.riesgo === "Alto") texto += " 🔴 (" + c.valor + " puntos)";
+        else if (c.riesgo === "Moderado") texto += " 🟡 (" + c.valor + " puntos)";
+        else texto += " 🟢 (" + c.valor + " punto)";
+        label.appendChild(document.createTextNode(" " + texto));
+        container.appendChild(label);
+    });
+}
+// FUNCIÓN PARA CARGAR CONDUCTAS DE PUBLICIDAD
+function cargarConductasPublicidad() {
+    const tipoPublicidad = document.getElementById('tipo_publicidad').value;
+    const conductaContainer = document.getElementById('conducta_publicidad');
+    
+    if (!conductaContainer) return;
+    
+    conductaContainer.innerHTML = "";
+    
+    if (tipoPublicidad && conductapublicidad[tipoPublicidad]) {
+        conductapublicidad[tipoPublicidad].forEach(c => {
+            const label = document.createElement("label");
+            label.style.display = "block";
+            label.style.marginBottom = "8px";
+            label.style.padding = "6px";
+            label.style.borderRadius = "6px";
+            label.style.cursor = "pointer";
+            
+            if (c.riesgo === "Alto") {
+                label.style.backgroundColor = "#fee2e2";
+                label.style.borderLeft = "4px solid #dc2626";
+            } else if (c.riesgo === "Moderado") {
+                label.style.backgroundColor = "#fef3c7";
+                label.style.borderLeft = "4px solid #f59e0b";
+            } else {
+                label.style.backgroundColor = "#d1fae5";
+                label.style.borderLeft = "4px solid #10b981";
+            }
+            
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.name = "conducta_publicidad_item";
+            checkbox.value = c.valor;
+            checkbox.setAttribute("data-nombre", c.nombre);
+            checkbox.setAttribute("data-riesgo", c.riesgo);
+            checkbox.setAttribute("data-valor", c.valor);
+            checkbox.addEventListener('change', function() {
+                if (typeof calcularMultaFrontend === 'function') {
+                    calcularMultaFrontend();
+                }
+            });
+            
+            label.appendChild(checkbox);
+            
+            let texto = c.nombre;
+            if (c.riesgo === "Alto") {
+                texto += " 🔴 (" + c.valor + " puntos)";
+            } else if (c.riesgo === "Moderado") {
+                texto += " 🟡 (" + c.valor + " puntos)";
+            } else {
+                texto += " 🟢 (" + c.valor + " puntos)";
+            }
+            label.appendChild(document.createTextNode(" " + texto));
+            conductaContainer.appendChild(label);
+        });
+    } else if (tipoPublicidad) {
+        conductaContainer.innerHTML = '<p style="color:#999; text-align:center; padding:20px;">📋 No hay conductas definidas para este tipo de publicidad</p>';
+    } else {
+        conductaContainer.innerHTML = '<p style="color:#999; text-align:center; padding:20px;">🔍 Seleccione un tipo de publicidad primero...</p>';
+    }
+}
 
+// ASIGNAR EVENTO AL SELECT DE PUBLICIDAD
+const tipoPublicidadSelect = document.getElementById('tipo_publicidad');
+if (tipoPublicidadSelect) {
+    tipoPublicidadSelect.addEventListener('change', cargarConductasPublicidad);
+}
 
 function calcularMultaFrontend() {
-    // Leer dirección misional
-    let direccionMisional = document.getElementById('direccion_misional').value || "Alimentos";
+    // Asegurarse de que todos los valores existan
+    let direccionMisional = document.getElementById('direccion_misional')?.value || "Alimentos";
     
-    // 1. Obtener valores
-    let afectacionTamanio = parseFloat(document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value === 'Microempresa' ? 3 :
-                              document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value === 'Pequeña empresa' ? 4 :
-                              document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value === 'Mediana empresa' ? 4.5 :
-                              document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value === 'Gran empresa' ? 5 :
-                              document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value === 'Establecimiento que es proveedor social del estado' ? 5 :
-                              document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value === 'Eventos Adversos en Salud Publica (Alertas, ETA) en los últimos 3 años' ? 5 : 3) || 3;
+    // 1. Obtener valores con validación
+    let tamanioSelect = document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value;
+    let afectacionTamanio = 3; // Valor por defecto
+    if (tamanioSelect === 'Microempresa') afectacionTamanio = 3;
+    else if (tamanioSelect === 'Pequeña empresa') afectacionTamanio = 4;
+    else if (tamanioSelect === 'Mediana empresa') afectacionTamanio = 4.5;
+    else if (tamanioSelect === 'Gran empresa') afectacionTamanio = 5;
     
-    let severidad = parseFloat(document.getElementById('severidad').value) || 0;
-    let severidadMedida = parseFloat(document.getElementById('medida_final').value) || 0;
-    let severidadTotal = severidad + severidadMedida;
+    // ==============================================
+    // NUEVO: SEVERIDAD incluyendo RIESGO PÚBLICO
+    // ==============================================
+    let severidadBase = parseFloat(document.getElementById('severidad')?.value) || 0;
+    let severidadMedida = parseFloat(document.getElementById('medida_final')?.value) || 0;
+    
+    // Calcular riesgo público (suma de todos los seleccionados)
+    let riesgoPublico = 0;
+    document.querySelectorAll('input[name="riesgo_publico_item"]:checked').forEach(cb => {
+        riesgoPublico += parseFloat(cb.value) || 0;
+    });
+    
+    // Severidad total = severidad base + medidas sanitarias + riesgo público
+    let severidadTotal = severidadBase + severidadMedida + riesgoPublico;
     if (severidadTotal > 5) severidadTotal = 5;
+  
     
-    // Calcular conducta (valor MÁS ALTO)
-    let conducta = 0;
+    // ==============================================
+    // NUEVO: CONDUCTA incluyendo CONDUCTAS DE PUBLICIDAD
+    // ==============================================
+    let conductaProducto = 1; // Valor por defecto
     let conductasSeleccionadas = [];
+    
+    // Conductas del producto
     document.querySelectorAll('input[name="conducta_item"]:checked').forEach(cb => {
         let valor = parseFloat(cb.value);
         conductasSeleccionadas.push({
             nombre: cb.getAttribute('data-nombre') || 'Sin nombre',
             riesgo: cb.getAttribute('data-riesgo') || 'Desconocido',
-            valor: valor
+            valor: valor,
+            tipo: 'producto'
         });
-        if (valor > conducta) conducta = valor;
+        if (valor > conductaProducto) conductaProducto = valor;
     });
-    if (conducta === 0) conducta = 3;
     
-    let laboratorio = parseFloat(document.getElementById('laboratorio').value) || 1;
-    let capacidadEconomica = parseFloat(document.getElementById('ponderacion_final').value) || 0.05;
+    // Conductas de publicidad
+    let conductaPublicidad = 0;
+    document.querySelectorAll('input[name="conducta_publicidad_item"]:checked').forEach(cb => {
+        let valor = parseFloat(cb.value);
+        conductasSeleccionadas.push({
+            nombre: cb.getAttribute('data-nombre') || 'Sin nombre',
+            riesgo: cb.getAttribute('data-riesgo') || 'Desconocido',
+            valor: valor,
+            tipo: 'publicidad'
+        });
+        if (valor > conductaPublicidad) conductaPublicidad = valor;
+    });
     
-    let smmlv = parseFloat(document.getElementById('smmlv').value);
-    let uvb = parseFloat(document.getElementById('uvb').value) || 12110;
+    // Usar el MAYOR valor entre conducta del producto y conducta de publicidad
+    let conductaFinal = Math.max(conductaProducto, conductaPublicidad);
+    if (conductaFinal === 0) conductaFinal = 1;
+    
+    let laboratorio = parseFloat(document.getElementById('laboratorio')?.value) || 1;
+    let capacidadEconomica = parseFloat(document.getElementById('ponderacion_final')?.value) || 0.05;
+    
+    let smmlv = parseFloat(document.getElementById('smmlv')?.value) || 1750905;
+    let uvb = parseFloat(document.getElementById('uvb')?.value) || 12110;
     let factorExtra = 1.0;
     
-    // 2. Calcular R
-    let R = (afectacionTamanio * 0.3) + (severidadTotal * 0.3) + (conducta * 0.3) + (laboratorio * 0.1);
+    // 2. Calcular R (usando severidadTotal y conductaFinal)
+    let R = (afectacionTamanio * 0.3) + (severidadTotal * 0.3) + (conductaFinal * 0.3) + (laboratorio * 0.1);
     R = Math.min(5, Math.max(1, R));
     
     // 3. Calcular FD
     let fdSMLMV = gumbelTransform(R, direccionMisional);
     
     // 4. Calcular ajuste
-    let ajusteNeto = parseFloat(document.getElementById('afectacion').value) || 0;
+    let ajusteNeto = 1; // Valor por defecto
+    let afectacionValor = parseFloat(document.getElementById('afectacion')?.value);
+    if (!isNaN(afectacionValor)) {
+        ajusteNeto = 1 + afectacionValor;
+    }
     
     // 5. Multa final
-  let multaFinalSmlmv = fdSMLMV * (1 + ajusteNeto) * capacidadEconomica * factorExtra;
+    let multaFinalSmlmv = fdSMLMV * ajusteNeto * capacidadEconomica * factorExtra;
 
-// NUEVOS LÍMITES: mínimo 5 SMLMV, máximo 10000 SMLMV
-if (multaFinalSmlmv < 5) {
-    multaFinalSmlmv = 5;
-}
-if (multaFinalSmlmv > 10000) {
-    multaFinalSmlmv = 10000;
-}
+    // LÍMITES: mínimo 1 SMLMV, máximo 10000 SMLMV
+    if (multaFinalSmlmv < 1) {
+        multaFinalSmlmv = 1;
+    }
+    if (multaFinalSmlmv > 10000) {
+        multaFinalSmlmv = 10000;
+    }
 
-multaFinalSmlmv = Math.round(multaFinalSmlmv * 100) / 100;
-let multaFinalPesos = multaFinalSmlmv * smmlv;
-let multaFinalUVB = convertirMultaAUVB(multaFinalSmlmv, smmlv, uvb);
+    multaFinalSmlmv = Math.round(multaFinalSmlmv * 100) / 100;
+    let multaFinalPesos = multaFinalSmlmv * smmlv;
+    let multaFinalUVB = convertirMultaAUVB(multaFinalSmlmv, smmlv, uvb);
+    
     // Determinar icono de riesgo
     let riesgoIcono = "", riesgoTexto = "";
-    if (conducta === 5) { riesgoIcono = "🔴"; riesgoTexto = "Alto"; }
-    else if (conducta === 3) { riesgoIcono = "🟡"; riesgoTexto = "Moderado"; }
+    if (conductaFinal === 5) { riesgoIcono = "🔴"; riesgoTexto = "Alto"; }
+    else if (conductaFinal === 3) { riesgoIcono = "🟡"; riesgoTexto = "Moderado"; }
     else { riesgoIcono = "🟢"; riesgoTexto = "Bajo"; }
     
-    // Resumen de conductas
+    // Resumen de conductas (producto + publicidad)
     let resumenConductas = "";
     if (conductasSeleccionadas.length > 0) {
-        let listaConductas = conductasSeleccionadas.map(c => `• ${c.nombre} (${c.valor} pts - ${c.riesgo})`).join('<br>');
-        resumenConductas = `<br><br><strong>📋 Conductas seleccionadas (${conductasSeleccionadas.length}):</strong><br>${listaConductas}<br><strong>➡️ Valor tomado: ${riesgoIcono} ${conducta} puntos (Máximo - Riesgo ${riesgoTexto})</strong>`;
+        let listaConductas = conductasSeleccionadas.map(c => `• [${c.tipo === 'producto' ? 'Producto' : 'Publicidad'}] ${c.nombre} (${c.valor} pts - ${c.riesgo})`).join('<br>');
+        resumenConductas = `<br><br><strong>📋 Conductas seleccionadas (${conductasSeleccionadas.length}):</strong><br>${listaConductas}<br><strong>➡️ Valor tomado: ${riesgoIcono} ${conductaFinal} puntos (Máximo - Riesgo ${riesgoTexto})</strong>`;
     }
     
     // Mostrar resultados
-    document.getElementById('resultadoBox').style.display = 'block';
-    document.getElementById('resultado_r').innerHTML = R.toFixed(2) + ' / 5';
-    document.getElementById('resultado_fd').innerHTML = fdSMLMV.toFixed(2);
-    document.getElementById('resultado_ajuste').innerHTML = (1 + ajusteNeto).toFixed(2);
-    document.getElementById('resultado_ce').innerHTML = capacidadEconomica;
-    document.getElementById('resultado_smlmv').innerHTML = multaFinalSmlmv.toFixed(2);
-    // Mostrar UVB si existe el elemento
-    if (document.getElementById('resultado_uvb')) {
-        document.getElementById('resultado_uvb').innerHTML = multaFinalUVB.toFixed(2);
-    }
-    document.getElementById('resultado_pesos').innerHTML = multaFinalPesos.toLocaleString('es-CO');
-    document.getElementById('detalle_final').innerHTML = `R = ${R.toFixed(2)} | Conducta = ${riesgoIcono} ${conducta} pts (${riesgoTexto}) | FD = Gumbel(${R.toFixed(2)}) = ${fdSMLMV.toFixed(2)} | Multa = ${fdSMLMV.toFixed(2)} × ${(1+ajusteNeto).toFixed(2)} × ${capacidadEconomica} = ${multaFinalSmlmv.toFixed(2)} SMLMV (≈ ${multaFinalUVB.toFixed(2)} UVB)${resumenConductas}`;
+    let resultadoBox = document.getElementById('resultadoBox');
+    if (resultadoBox) resultadoBox.style.display = 'block';
+    let resultadoR = document.getElementById('resultado_r');
+    if (resultadoR) resultadoR.innerHTML = R.toFixed(2) + ' / 5';
+    let resultadoFD = document.getElementById('resultado_fd');
+    if (resultadoFD) resultadoFD.innerHTML = fdSMLMV.toFixed(2);
+    let resultadoAjuste = document.getElementById('resultado_ajuste');
+    if (resultadoAjuste) resultadoAjuste.innerHTML = ajusteNeto.toFixed(2);
+    let resultadoCe = document.getElementById('resultado_ce');
+    if (resultadoCe) resultadoCe.innerHTML = capacidadEconomica.toFixed(4);
+    let resultadoSmlmv = document.getElementById('resultado_smlmv');
+    if (resultadoSmlmv) resultadoSmlmv.innerHTML = multaFinalSmlmv.toFixed(2);
+    let resultadoUvb = document.getElementById('resultado_uvb');
+    if (resultadoUvb) resultadoUvb.innerHTML = multaFinalUVB.toFixed(2);
+    let resultadoPesos = document.getElementById('resultado_pesos');
+    if (resultadoPesos) resultadoPesos.innerHTML = multaFinalPesos.toLocaleString('es-CO');
+    let detalleFinal = document.getElementById('detalle_final');
+    if (detalleFinal) detalleFinal.innerHTML = `R = ${R.toFixed(2)} | Conducta = ${riesgoIcono} ${conductaFinal} pts (${riesgoTexto}) | FD = Gumbel(${R.toFixed(2)}) = ${fdSMLMV.toFixed(2)} | Multa = ${fdSMLMV.toFixed(2)} × ${ajusteNeto.toFixed(2)} × ${capacidadEconomica.toFixed(4)} = ${multaFinalSmlmv.toFixed(2)} SMLMV (≈ ${multaFinalUVB.toFixed(2)} UVB)${resumenConductas}`;
 }
-    
  
+
 
 // ============================================================
 // 3. EVENTOS Y FUNCIONES EXISTENTES
@@ -3023,6 +3071,7 @@ document.getElementById('tipo_producto').addEventListener('change', function() {
             checkbox.setAttribute("data-nombre", c.nombre);  // ⚠️ IMPORTANTE: Asignar el nombre
             checkbox.setAttribute("data-riesgo", c.riesgo);  // Asignar el riesgo
             checkbox.setAttribute("data-valor", c.valor);    // Asignar el valor
+            checkbox.addEventListener('change', calcularMultaFrontend); // Recalcular al cambiar
             
             label.appendChild(checkbox);
             
@@ -3055,16 +3104,7 @@ document.getElementById("medida").addEventListener("change", function(){
     calcularSeveridadTotal();
 });
 
-function calcularSeveridadTotal(){
-    let severidad = parseFloat(document.getElementById("severidad").value) || 0;
-    let medida = parseFloat(document.getElementById("medida_final").value) || 0;
-    document.getElementById("severidad_total").value = (severidad + medida).toFixed(2);
-}
 
-document.getElementById("riesgo").addEventListener("change", function(){
-    calcularSeveridad();
-    calcularSeveridadTotal();
-});
 
 function calcularSeveridad(){
     let select = document.getElementById("riesgo");
@@ -3073,56 +3113,31 @@ function calcularSeveridad(){
         let valor = select.selectedOptions[i].value;
         total += tablaSeveridad[valor] || 0;
     }
-    document.getElementById("severidad").value = total;
-}
+    if (total > 5) total = 5;
+    document.getElementById("severidad").value = total.toFixed(2);
+    calcularSeveridadTotal();
 
-document.getElementById("tipo_persona").addEventListener("change", function(){
-    let tipo = this.value;
-    let contSisben = document.getElementById("contenedor_sisben");
-    let contEmpresa = document.getElementById("contenedor_empresa");
-    let sisben = document.getElementById("sisben");
-    let empresa = document.getElementById("empresa");
-    let select = document.getElementById("utilidades");
-    select.innerHTML = "<option value=''>Seleccione</option>";
-    if(tipo === "natural"){
-        select.innerHTML += "<option value='0.01'>Hasta 0,9 SMMLV</option>";
-        select.innerHTML += "<option value='0.03'>Más de 0,9 hasta 1,1 SMMLV</option>";
-        select.innerHTML += "<option value='0.05'>Más de 1,1 hasta 2 SMMLV</option>";
-        select.innerHTML += "<option value='0.07'>Más de 2 hasta 5 SMMLV</option>";
-        select.innerHTML += "<option value='1'>Más de 5 SMMLV</option>";
-    }
-    if(tipo === "juridica"){
-        select.innerHTML += "<option value='0.25'>inferiores a $895.488.000.</option>";
-        select.innerHTML += "<option value='0.5'>mayores a $895.488.000 y menores o iguales a $7.790.630.000.</option>";
-        select.innerHTML += "<option value='0.75'>mayores a $7.790.630.000 y menores o iguales a $65.996.416.000.</option>";
-        select.innerHTML += "<option value='1'>mayores a $65.996.416.000.</option>";
-    }
-    sisben.innerHTML = "<option value=''>Seleccione</option>";
-    empresa.innerHTML = "<option value=''>Seleccione</option>";
-    if(tipo === "natural"){
-        contSisben.style.display = "block";
-        contEmpresa.style.display = "none";
-        sisben.innerHTML += "<option value='0.01'>Nivel 1</option>";
-        sisben.innerHTML += "<option value='0.02'>Nivel 2</option>";
-        sisben.innerHTML += "<option value='0.03'>Nivel 3</option>";
-        sisben.innerHTML += "<option value='0.04'>Nivel 4</option>";
-        sisben.innerHTML += "<option value='0.05'>Nivel 5</option>";
-        sisben.innerHTML += "<option value='0.06'>Nivel 6</option>";
-        sisben.innerHTML += "<option value='0.01'>Población especial</option>";
-    } else if(tipo === "juridica"){
-        contSisben.style.display = "none";
-        contEmpresa.style.display = "block";
-       
-        empresa.innerHTML += "<option value='0.1'>Pymes</option>";
-        empresa.innerHTML += "<option value='0.25'>Microempresa</option>";
-        empresa.innerHTML += "<option value='0.5'>Pequeña</option>";
-        empresa.innerHTML += "<option value='0.75'>Mediana</option>";
-        empresa.innerHTML += "<option value='1'>Grande</option>";
-    } else {
-        contSisben.style.display = "none";
-        contEmpresa.style.display = "none";
-    }
-});
+    
+}
+function calcularSeveridadTotal(){
+    let severidad = parseFloat(document.getElementById("severidad").value) || 0;
+    let medida = parseFloat(document.getElementById("medida_final").value) || 0;
+    
+    
+    // NUEVO: Calcular riesgo público (suma de todos los seleccionados)
+    let riesgoPublico = 0;
+    document.querySelectorAll('input[name="riesgo_publico_item"]:checked').forEach(cb => {
+        riesgoPublico += parseFloat(cb.value) || 0;
+    });
+    
+    let severidadTotal = severidad + medida + riesgoPublico;  // ← AQUÍ EL CAMBIO
+    if (severidadTotal > 5) severidadTotal = 5;
+    document.getElementById("severidad_total").value = severidadTotal.toFixed(2);
+    
+
+    
+   
+}
 
 document.getElementById("tipo_entidad").addEventListener("change", function(){
     let tipo = this.value;
@@ -3150,34 +3165,97 @@ document.getElementById("tipo_entidad").addEventListener("change", function(){
         select.innerHTML += "<option value='0.5'>Nivel III</option>";
         select.innerHTML += "<option value='0.25'>Nivel IV</option>";
     }
+    if(tipo === "privada"){
+        select.innerHTML += "<option value='1'>Privada</option>";
+
+    }
+    calcularPonderacionFinal(); // Recalcular al cambiar
 });
+document.getElementById("tipo_persona").addEventListener("change", function(){
+    let tipo = this.value;
+    let contSisben = document.getElementById("contenedor_sisben");
+    let contEmpresa = document.getElementById("contenedor_empresa");
+    let sisben = document.getElementById("sisben");
+    let empresa = document.getElementById("empresa");
+    let select = document.getElementById("utilidades");
+    select.innerHTML = "<option value=''>Seleccione</option>";
+    if(tipo === "natural"){
+        select.innerHTML += "<option value='0.01'>Hasta 0,9 SMMLV</option>";
+        select.innerHTML += "<option value='0.03'>Más de 0,9 hasta 1,1 SMMLV</option>";
+        select.innerHTML += "<option value='0.05'>Más de 1,1 hasta 2 SMMLV</option>";
+        select.innerHTML += "<option value='0.07'>Más de 2 hasta 5 SMMLV</option>";
+        select.innerHTML += "<option value='1'>Más de 5 SMMLV</option>";
+    }
+    if(tipo === "juridica"){
+        select.innerHTML += "<option value='0.25'>inferiores a $895.488</option>";
+        select.innerHTML += "<option value='0.5'>mayores a $895.488 y menores o iguales a $7.790.630</option>";
+        select.innerHTML += "<option value='0.75'>mayores a $7.790.630 y menores o iguales a $65.996.416</option>";
+        select.innerHTML += "<option value='1'>mayores a $65.996.416</option>";
+    }
+    sisben.innerHTML = "<option value=''>Seleccione</option>";
+    empresa.innerHTML = "<option value=''>Seleccione</option>";
+    if(tipo === "natural"){
+        contSisben.style.display = "block";
+        contEmpresa.style.display = "none";
+        sisben.innerHTML += "<option value='0.01'>No aplica</option>";
+        sisben.innerHTML += "<option value='0.01'>Nivel 1</option>";
+        sisben.innerHTML += "<option value='0.02'>Nivel 2</option>";
+        sisben.innerHTML += "<option value='0.03'>Nivel 3</option>";
+        sisben.innerHTML += "<option value='0.04'>Nivel 4</option>";
+        sisben.innerHTML += "<option value='0.05'>Nivel 5</option>";
+        sisben.innerHTML += "<option value='0.06'>Nivel 6</option>";
+        sisben.innerHTML += "<option value='0.01'>Población especial</option>";
+    } else if(tipo === "juridica"){
+        contSisben.style.display = "none";
+        contEmpresa.style.display = "block";
+        
+        empresa.innerHTML += "<option value='0.25'>Microempresa</option>";
+        empresa.innerHTML += "<option value='0.5'>Pequeña</option>";
+        empresa.innerHTML += "<option value='0.75'>Mediana</option>";
+        empresa.innerHTML += "<option value='1'>Grande</option>";
+    } else {
+        contSisben.style.display = "none";
+        contEmpresa.style.display = "none";
+    }
+    calcularPonderacionFinal(); // Recalcular al cambiar
+});
+
+
 function calcularPonderacionFinal() {
-    const tipoPersona = document.getElementById("tipo_persona").value || "";
-    const utilidad = parseFloat(document.getElementById("utilidades").value) || 0;
-    const categoriaEntidad = parseFloat(document.getElementById("categoria_entidad").value) || 0;
+    const tipoPersona = document.getElementById("tipo_persona")?.value || "";
+    const utilidad = parseFloat(document.getElementById("utilidades")?.value) || 0;
+    const categoriaEntidad = parseFloat(document.getElementById("categoria_entidad")?.value) || 0;
     
     let valores = [utilidad, categoriaEntidad];
     
     if(tipoPersona === "natural") {
-        const sisbenVal = document.getElementById("sisben").value;
-        if(sisbenVal !== "") valores.push(parseFloat(sisbenVal));
+        const sisbenVal = document.getElementById("sisben")?.value;
+        if(sisbenVal && sisbenVal !== "") valores.push(parseFloat(sisbenVal));
     }
     if(tipoPersona === "juridica") {
-        const empresaVal = document.getElementById("empresa").value;
-        if(empresaVal !== "") valores.push(parseFloat(empresaVal));
+        const empresaVal = document.getElementById("empresa")?.value;
+        if(empresaVal && empresaVal !== "") valores.push(parseFloat(empresaVal));
     }
     
-    let ponderado = Math.max(...valores);  // ← CAMBIO: MAX en lugar de suma
-    if (ponderado === 0 || isNaN(ponderado)) ponderado = 1.00;
+    // Filtrar valores válidos
+    valores = valores.filter(v => !isNaN(v) && v > 0);
     
-    document.getElementById("ponderacion_final").value = ponderado.toFixed(4);
+    let ponderado = 1.00;
+    if (valores.length > 0) {
+        ponderado = Math.max(...valores);
+    }
+    
+    let ponderacionFinal = document.getElementById("ponderacion_final");
+    if (ponderacionFinal) {
+        ponderacionFinal.value = ponderado.toFixed(4);
+    }
 }
 
 function calcularAfectacion(){
-    let sumaAgrav = 0, sumaAtenu = 0, sumaCriterios = 0;
+    let sumaAgrav = 0, sumaAtenu = 0;
     
     // NUEVO: Obtener el valor del desenlace
-    let desenlaceRaw = parseFloat(document.getElementById('desenlace').value) || 0;
+    let desenlaceRaw = parseFloat(document.getElementById('desenlace')?.value) || 0;
     
     // Convertir desenlace (1, 4.2, 4.4, 4.6, 4.8, 5) a un valor entre 0 y 0.46
     let desenlaceAjustado = 0;
@@ -3190,21 +3268,22 @@ function calcularAfectacion(){
     
     document.querySelectorAll("input[name='agravantes']:checked").forEach(el => sumaAgrav += parseFloat(el.value));
     document.querySelectorAll("input[name='atenuante']:checked").forEach(el => sumaAtenu += parseFloat(el.value));
-    document.querySelectorAll("input[name='Criterios_de_graduación']:checked").forEach(el => sumaCriterios += parseFloat(el.value));
     
     // Límites según hoja Tablas de referencia del Excel oficial
     sumaAgrav = Math.min(sumaAgrav, 0.46);
     sumaAtenu = Math.min(Math.abs(sumaAtenu), 0.38);
-    sumaCriterios = Math.min(sumaCriterios, 0.46);
     
     // NUEVO: Limitar el desenlace ajustado para que no exceda 0.46
     desenlaceAjustado = Math.min(desenlaceAjustado, 0.46);
     
     // Incluir el desenlace en la suma total
-    let total = sumaAgrav + sumaCriterios + desenlaceAjustado - sumaAtenu;
+    let total = sumaAgrav + desenlaceAjustado - sumaAtenu;
     total = Math.min(0.46, Math.max(-0.38, total));  // Límites NO se modifican
     
-    document.getElementById("afectacion").value = total.toFixed(2);
+    let afectacionInput = document.getElementById("afectacion");
+    if (afectacionInput) {
+        afectacionInput.value = total.toFixed(2);
+    }
 }
 
 function calcularMedidaFinal(){
@@ -3214,33 +3293,66 @@ function calcularMedidaFinal(){
         total += parseFloat(select.selectedOptions[i].value) || 0;
     }
 
-    document.getElementById("medida_final").value = total.toFixed(2);
+    let medidaFinal = document.getElementById("medida_final");
+    if (medidaFinal) {
+        medidaFinal.value = total.toFixed(2);
+    }
     calcularSeveridadTotal();
 }
 
 // Asignar eventos
 ["tipo_persona","utilidades","sisben","empresa","categoria_entidad"].forEach(id => {
     const el = document.getElementById(id);
-    if(el) el.addEventListener("change", calcularPonderacionFinal);
+    if(el) el.addEventListener("change", () => {
+        calcularPonderacionFinal();
+        calcularMultaFrontend();
+    });
 });
-document.querySelectorAll("input[name='agravantes'], input[name='atenuante'], input[name='Criterios_de_graduación']").forEach(el => {
-    el.addEventListener("change", calcularAfectacion);
+document.querySelectorAll("input[name='agravantes'], input[name='atenuante']").forEach(el => {
+    el.addEventListener("change", () => {
+        calcularAfectacion();
+        calcularMultaFrontend();
+    });
 });
-document.getElementById("medida").addEventListener("change", calcularMedidaFinal);
+document.getElementById("medida").addEventListener("change", () => {
+    calcularMedidaFinal();
+    calcularMultaFrontend();
+});
 document.getElementById("calcularBtn").addEventListener("click", calcularMultaFrontend);
 document.getElementById("guardarBtn").addEventListener("click", generarPDF);
 
 // NUEVO: Evento para el desenlace
-document.getElementById("desenlace").addEventListener("change", function() {
-    calcularAfectacion();      // Actualiza la afectación con el nuevo desenlace
-    calcularMultaFrontend();   // Recalcula la multa automáticamente
-});
+let desenlaceSelect = document.getElementById("desenlace");
+if (desenlaceSelect) {
+    desenlaceSelect.addEventListener("change", function() {
+        calcularAfectacion();      // Actualiza la afectación con el nuevo desenlace
+        calcularMultaFrontend();   // Recalcula la multa automáticamente
+    });
+}
+
+// Evento para dirección misional y otros campos que afectan el cálculo
+let direccionMisionalSelect = document.getElementById("direccion_misional");
+if (direccionMisionalSelect) {
+    direccionMisionalSelect.addEventListener("change", calcularMultaFrontend);
+}
+
+let laboratorioSelect = document.getElementById("laboratorio");
+if (laboratorioSelect) {
+    laboratorioSelect.addEventListener("change", calcularMultaFrontend);
+}
+
+let tamanioSelect = document.getElementById("Tamaño_establecimiento");
+if (tamanioSelect) {
+    tamanioSelect.addEventListener("change", calcularMultaFrontend);
+}
 
 // Inicializar
 window.addEventListener('DOMContentLoaded', () => {
     calcularPonderacionFinal();
     calcularAfectacion();
     calcularMedidaFinal();
+    cargarRiesgoPublico();
+    calcularMultaFrontend(); // Calcular multa inicial
 });
 // ESTABLECIMIENTO → GRUPO PRODUCTO (Tus datos originales)
 document.getElementById("establecimiento").addEventListener("change", function(){
@@ -6359,21 +6471,13 @@ document.getElementById("severidad").value = 5.0;
 
 });
 
-// RIESGO → SEVERIDAD (función ya existe arriba)
-function calcularSeveridad(){
-    let select = document.getElementById("riesgo");
-    let total = 0;
-    for(let i = 0; i < select.selectedOptions.length; i++){
-        let valor = select.selectedOptions[i].value;
-        total += tablaSeveridad[valor] || 0;
-    }
-    document.getElementById("severidad").value = total;
-}
+
 
 // Asegurar que el evento change del riesgo llame a calcularSeveridad y calcularSeveridadTotal
 document.getElementById("riesgo").addEventListener("change", function(){
     calcularSeveridad();
     calcularSeveridadTotal();
+    calcularMultaFrontend();
 });
 
 // Inicializar funciones que dependen de selects ya poblados
@@ -6381,6 +6485,8 @@ window.addEventListener('DOMContentLoaded', () => {
     calcularPonderacionFinal();
     calcularAfectacion();
     calcularMedidaFinal();
+    cargarRiesgoPublico();
+    calcularMultaFrontend(); // Calcular multa inicial
 });
 // ============================================================
 // FUNCIÓN PARA GENERAR PDF - VERSIÓN CORREGIDA
@@ -6451,12 +6557,7 @@ function generarPDF() {
         }
     });
     
-    const criteriosSeleccionados = [];
-    document.querySelectorAll('input[name="Criterios_de_graduación"]:checked').forEach(cb => {
-        if (cb.value !== '0') {
-            criteriosSeleccionados.push(cb.parentElement.textContent.trim());
-        }
-    });
+    // Nota: Ya no existen los criterios de graduación como checkboxes separados, se usan agravantes y atenuantes.
     
     const afectacion = document.getElementById('afectacion').value || '0';
     
@@ -6466,12 +6567,13 @@ function generarPDF() {
     const resultadoCe = document.getElementById('resultado_ce').innerHTML || 'No calculado';
     const resultadoSmlmv = document.getElementById('resultado_smlmv').innerHTML || 'No calculado';
     const resultadoPesos = document.getElementById('resultado_pesos').innerHTML || 'No calculado';
+    const resultadoUvb = document.getElementById('resultado_uvb').innerHTML || 'No calculado';
     const detalleFinal = document.getElementById('detalle_final').innerHTML || '';
     
     const fechaActual = new Date().toLocaleString('es-CO');
     
     // ============================================================
-    // 2. CALCULAR VARIABLES PARA LA EXPLICACIÓN
+    // 2. CALCULAR VARIABLES PARA LA EXPLICACIÓN (con los valores actuales)
     // ============================================================
     
     const tamanioVal = document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value;
@@ -6480,14 +6582,12 @@ function generarPDF() {
     else if (tamanioVal === 'Pequeña empresa') A = 4;
     else if (tamanioVal === 'Mediana empresa') A = 4.5;
     else if (tamanioVal === 'Gran empresa') A = 5;
-    else if (tamanioVal === 'Establecimiento que es proveedor social del estado') A = 5;
-    else if (tamanioVal === 'Eventos Adversos en Salud Publica (Alertas, ETA) en los últimos 3 años') A = 5;
     
     let S = parseFloat(severidadTotal);
     if (isNaN(S)) S = 0;
     if (S > 5) S = 5;
     
-    let C = 3;
+    let C = 1;
     let maxConducta = 0;
     document.querySelectorAll('input[name="conducta_item"]:checked').forEach(cb => {
         let val = parseFloat(cb.value);
@@ -6540,8 +6640,8 @@ function generarPDF() {
     let fdBase = obtenerFDBaseInterpolado(R_calc);
     let fdFinal = fdBase * factorEscala;
     
-    let sumaAgrav = 0, sumaAtenu = 0, sumaCriterios = 0;
-    let cantAgrav = 0, cantAtenu = 0, cantCriterios = 0;
+    let sumaAgrav = 0, sumaAtenu = 0;
+    let cantAgrav = 0, cantAtenu = 0;
     document.querySelectorAll("input[name='agravantes']:checked").forEach(el => {
         let val = parseFloat(el.value);
         if (val !== 0 && !isNaN(val)) { sumaAgrav += val; cantAgrav++; }
@@ -6549,10 +6649,6 @@ function generarPDF() {
     document.querySelectorAll("input[name='atenuante']:checked").forEach(el => {
         let val = parseFloat(el.value);
         if (val !== 0 && !isNaN(val)) { sumaAtenu += Math.abs(val); cantAtenu++; }
-    });
-    document.querySelectorAll("input[name='Criterios_de_graduación']:checked").forEach(el => {
-        let val = parseFloat(el.value);
-        if (val !== 0 && !isNaN(val)) { sumaCriterios += val; cantCriterios++; }
     });
     
     const desenlaceRaw = parseFloat(document.getElementById('desenlace').value) || 1;
@@ -6565,15 +6661,15 @@ function generarPDF() {
     else if (desenlaceRaw === 4.8) { desenlaceAjustado = 0.32; desenlaceTexto = "Enfermedad o daño que amenace la vida (+32%)"; }
     else if (desenlaceRaw === 5) { desenlaceAjustado = 0.40; desenlaceTexto = "Muerte (+40%)"; }
     
-    let afectacionTotal = sumaAgrav + sumaCriterios + desenlaceAjustado - sumaAtenu;
+    let afectacionTotal = sumaAgrav + desenlaceAjustado - sumaAtenu;
     afectacionTotal = Math.min(0.46, Math.max(-0.38, afectacionTotal));
     let ajusteNeto = 1 + afectacionTotal;
     
     let ceValor = parseFloat(ponderacionFinal);
     if (isNaN(ceValor)) ceValor = 0.05;
     let multaCalculada = fdFinal * ajusteNeto * ceValor;
-    if (multaCalculada < 5) { 
-        multaCalculada = 5;}
+    if (multaCalculada < 1) { 
+        multaCalculada = 1;}
     if (multaCalculada > 10000) { 
         multaCalculada = 10000;}
     multaCalculada = Math.round(multaCalculada * 100) / 100;
@@ -6621,7 +6717,6 @@ function generarPDF() {
                     cursor: pointer; 
                     font-size: 14px;
                 }
-                .btn-pdf:hover { background: #1565c0; }
                 .btn-cerrar {
                     padding: 10px 20px;
                     margin-top: 20px;
@@ -6691,7 +6786,7 @@ function generarPDF() {
                 <tr><td>Tamaño establecimiento</td><td>${tamanioEstablecimiento}</td></tr>
                 <tr><td>SMLMV</td><td>$${parseInt(smmlv).toLocaleString('es-CO')}</td></tr>
                 <tr><td>Tipo de persona</td><td>${tipoPersona}</td></tr>
-                <tr><td>Utilidades</td><td>${utilidades}</td></tr>
+                <tr><td>Capacidad económica (Capital pagado-RUES)</td><td>${utilidades}</td></tr>
                 <tr><td>SISBEN</td><td>${sisben}</td></tr>
                 <tr><td>Tipo de entidad</td><td>${tipoEntidad}</td></tr>
                 <tr><td>Categoría</td><td>${categoria}</td></tr>
@@ -6709,19 +6804,18 @@ function generarPDF() {
                 <tr><td>Medida sanitaria</td><td>${medidaSanitaria}</td></tr>
                 <tr><td><strong>Severidad total</strong></td><td><strong>${severidadTotal}</strong></td></tr>
                 <tr><td>Laboratorio</td><td>${laboratorio}</td></tr>
-                <tr><td>Tipo de desenlace</td><td>${desenlace}</td></tr>
+                <tr><td>Materialización del riesgo</td><td>${desenlace}</td></tr>
                 <tr><td>IRA</td><td>${ira}</td></tr>
             </table>
             
             <!-- ================================================== -->
-            <!-- 5. AGRAVANTES, ATENUANTES Y CRITERIOS              -->
+            <!-- 5. AGRAVANTES, ATENUANTES Y AFECTACIÓN             -->
             <!-- ================================================== -->
-            <h2>5. Agravantes, Atenuantes y Criterios</h2>
+            <h2>5. Criterios de graduación</h2>
             <table>
                 <tr><th>Tipo</th><th>Seleccionados</th></tr>
-                <tr><td>Agravantes</td><td>${agravantesSeleccionados.length > 0 ? agravantesSeleccionados.map(a => `• ${a}`).join('<br>') : 'Ninguno'}</td></tr>
-                <tr><td>Atenuantes</td><td>${atenuantesSeleccionados.length > 0 ? atenuantesSeleccionados.map(a => `• ${a}`).join('<br>') : 'Ninguno'}</td></tr>
-                <tr><td>Criterios</td><td>${criteriosSeleccionados.length > 0 ? criteriosSeleccionados.map(c => `• ${c}`).join('<br>') : 'Ninguno'}</td></tr>
+                <tr><td>CRITERIOS DE GRADUACIÓN APLICABLES DESFAVORABLEMENTE AL INVESTIGADO</td><td>${agravantesSeleccionados.length > 0 ? agravantesSeleccionados.map(a => `• ${a}`).join('<br>') : 'Ninguno'}</td></tr>
+                <tr><td>CRITERIOS DE GRADUACIÓN APLICABLES FAVORABLEMENTE AL INVESTIGADO</td><td>${atenuantesSeleccionados.length > 0 ? atenuantesSeleccionados.map(a => `• ${a}`).join('<br>') : 'Ninguno'}</td></tr>
                 <tr><td><strong>Afectación total</strong></td><td><strong>${afectacion}</strong></td></tr>
             </table>
             
@@ -6730,7 +6824,7 @@ function generarPDF() {
             <!-- ================================================== -->
             <h2>6. Resultado del Cálculo</h2>
             <div class="resultado-box">
-                <tr>
+                <table>
                     <tr><th>Variable</th><th>Valor</th></tr>
                     <tr><td>R (puntaje bruto)</td><td>${resultadoR}</td></tr>
                     <tr><td>FD (Factor Directo)</td><td>${resultadoFD} SMLMV</td></tr>
@@ -6742,7 +6836,7 @@ function generarPDF() {
                 <p class="multa-final">${resultadoSmlmv} SMLMV</p>
                 
                 <h3>💰 Multa en Unidades de Valor Básico (UVB)</h3>
-                <p class="multa-final" style="color: #2e7d32;">${multaUVBCalculada} UVB</p>
+                <p class="multa-final" style="color: #2e7d32;">${resultadoUvb} UVB</p>
                 <p style="font-size: 12px; color: #555;">✅ De conformidad con el <strong>Artículo 313 de la Ley 2294 de 2023</strong> (Plan Nacional de Desarrollo 2022-2026), las sanciones del INVIMA se calculan en UVB.</p>
                 
                 <h3>💵 Multa en Pesos Colombianos</h3>
@@ -6763,7 +6857,7 @@ function generarPDF() {
             <h3>📊 1. VARIABLES DE ENTRADA</h3>
             <table>
                 <tr style="background-color: #e3f2fd;"><th>Variable</th><th>Valor</th><th>Descripción</th></tr>
-                <tr><td><strong>A (Tamaño establecimiento)</strong></td><td>${A}</td><td>Microempresa=3, Pequeña=4, Mediana=4.5, Gran empresa=5, Proveedor social=5, Eventos adversos=5</td></tr>
+                <tr><td><strong>A (Tamaño establecimiento)</strong></td><td>${A}</td><td>Microempresa=3, Pequeña=4, Mediana=4.5, Gran empresa=5</td></tr>
                 <tr><td><strong>S (Severidad total)</strong></td><td>${S}</td><td>Suma de riesgos + medidas sanitarias (acotado a 5)</td></tr>
                 <tr><td><strong>C (Conducta)</strong></td><td>${C}</td><td>Bajo=1, Moderado=3, Alto=5</td></tr>
                 <tr><td><strong>L (Laboratorio)</strong></td><td>${L}</td><td>Sin rechazo=1, Con rechazo=5</td></tr>
@@ -6775,10 +6869,9 @@ function generarPDF() {
             <h3>⚖️ 2. FACTORES MODULADORES (AFECTACIÓN)</h3>
             <table>
                 <tr style="background-color: #e3f2fd;"><th>Factor</th><th>Cantidad</th><th>Aporte</th></tr>
-                <tr><td>Agravantes</td><td>${cantAgrav} ítems</td><td>+${sumaAgrav.toFixed(2)}</td></tr>
-                <tr><td>Atenuantes</td><td>${cantAtenu} ítems</td><td>-${sumaAtenu.toFixed(2)}</td></tr>
-                <tr><td>Criterios de graduación</td><td>${cantCriterios} ítems</td><td>+${sumaCriterios.toFixed(2)}</td></tr>
-                <tr><td>Desenlace (daño causado)</td><td>${desenlaceTexto}</td><td>+${desenlaceAjustado.toFixed(2)}</td></tr>
+                <tr><td>CRITERIOS DE GRADUACIÓN APLICABLES DESFAVORABLEMENTE AL INVESTIGADO</td><td>${cantAgrav} ítems</td><td>+${sumaAgrav.toFixed(2)}</td></tr>
+                <tr><td>CRITERIOS DE GRADUACIÓN APLICABLES FAVORABLEMENTE AL INVESTIGADO</td><td>${cantAtenu} ítems</td><td>-${sumaAtenu.toFixed(2)}</td></tr>
+                <tr><td>Materialización del riesgo</td><td>${desenlaceTexto}</td><td>+${desenlaceAjustado.toFixed(2)}</td></tr>
                 <tr style="background-color: #f0f0f0;"><td><strong>Afectación total</strong></td><td colspan="2"><strong>${afectacionTotal.toFixed(2)}</strong></td></tr>
                 <tr style="background-color: #e8f5e9;"><td><strong>Ajuste neto (1 + afectación)</strong></td><td colspan="2"><strong>${ajusteNeto.toFixed(2)}</strong></td></tr>
             </table>
@@ -6809,7 +6902,7 @@ function generarPDF() {
                     <tr><td>3.6</td><td>26.5</td><td>-</td></tr>
                     <tr><td>3.7</td><td>28.5</td><td>-</td></tr>
                     <tr><td>3.8</td><td>30.5</td><td>-</td></tr>
-                    <tr><td>3.9</td><td>32.5</td><td>-</td><tr>
+                    <tr><td>3.9</td><td>32.5</td><td>-</td></tr>
                     <tr style="background-color: #fff3e0;">
                         <td><strong>${R_calc.toFixed(2)}</strong></td>
                         <td><strong>${fdBase.toFixed(2)}</strong></td>
@@ -6844,7 +6937,6 @@ function generarPDF() {
                 <div class="formula">
                     Multa = ${multaCalculada.toFixed(2)} × $${smmlvNum.toLocaleString('es-CO')} = <strong>$${multaPesosCalculada.toLocaleString('es-CO')}</strong>
                 </div>
-                ${multaCalculada >= 10000 ? '<p><em>⚠️ Se aplicó el tope máximo de 10000 SMLMV establecido por el sistema.</em></p>' : ''}
                 <p><strong>En UVB (Ley 2294 de 2023):</strong></p>
                 <div class="formula">
                     Multa en UVB = $${multaPesosCalculada.toLocaleString('es-CO')} ÷ $${uvbPesos.toLocaleString('es-CO')} = <strong>${multaUVBCalculada} UVB</strong>
@@ -6855,49 +6947,36 @@ function generarPDF() {
             <table>
                 <tr style="background-color: #e3f2fd;"><th>Concepto</th><th>Valor</th></tr>
                 <tr><td style="min-width: 250px;">Puntaje bruto (R)</td><td>${R_calc.toFixed(2)} / 5</td></tr>
-                <tr><td style="min-width: 250px;">Factor Directo (FD)</td><td>${fdFinal.toFixed(2)} SMLMV</tr>
-                <tr><td style="min-width: 250px;">Afectación total</td><td>${afectacionTotal.toFixed(2)} (${(afectacionTotal * 100).toFixed(0)}%)</tr>
-                <tr><td style="min-width: 250px;">Ajuste neto</td><td>${ajusteNeto.toFixed(2)}</tr>
-                <tr><td style="min-width: 250px;">Capacidad económica (Ce)</td><td>${ceValor.toFixed(4)}</tr>
+                <tr><td style="min-width: 250px;">Factor Directo (FD)</td><td>${fdFinal.toFixed(2)} SMLMV</td></tr>
+                <tr><td style="min-width: 250px;">Afectación total</td><td>${afectacionTotal.toFixed(2)} (${(afectacionTotal * 100).toFixed(0)}%)</td></tr>
+                <tr><td style="min-width: 250px;">Ajuste neto</td><td>${ajusteNeto.toFixed(2)}</td></tr>
+                <tr><td style="min-width: 250px;">Capacidad económica (Ce)</td><td>${ceValor.toFixed(4)}</td></tr>
                 <tr style="background-color: #e8f5e9;"><td style="min-width: 250px;"><strong>Multa final en SMLMV</strong></td><td><strong>${multaCalculada.toFixed(2)} SMLMV</strong></td></tr>
                 <tr style="background-color: #e8f5e9;"><td style="min-width: 250px;"><strong>Multa final en UVB</strong></td><td><strong>${multaUVBCalculada} UVB</strong></td></tr>
-                <tr style="background-color: #e8f5e9;"><td style="min-width: 250px;"><strong>Multa final en pesos</strong></td><td><strong>$${multaPesosCalculada.toLocaleString('es-CO')}</strong></tr>
+                <tr style="background-color: #e8f5e9;"><td style="min-width: 250px;"><strong>Multa final en pesos</strong></td><td><strong>$${multaPesosCalculada.toLocaleString('es-CO')}</strong></td></tr>
             </table>
-
-
-
-
             
-                
-
             <!-- FIRMA -->
             <div class="firma" style="margin-top: 50px; text-align: center;">
                 <div style="border-top: 1px solid #000; width: 300px; margin: 0 auto; padding-top: 10px;">
                     <strong>Firma</strong><br>
                     <span style="font-size: 12px;">${nombreProfesional}</span><br>
                     <span style="font-size: 11px; color: #555;">${cargoProfesional}</span>
-            </div>
+                </div>
                 <p style="font-size: 11px; margin-top: 10px;">Revisó: ${nombreProfesional}</p>
             </div>
-
-         
-            
-            
             
             <!-- ================================================== -->
             <!-- 8. PIE DE PÁGINA                                    -->
             <!-- ================================================== -->
             <div class="footer no-print">
-                
-                
                 <button class="btn-pdf" onclick="window.print()">📄 Guardar como PDF</button>
                 <button class="btn-cerrar" onclick="window.close()">❌ Cerrar</button>
-                <p>Creado por: Ing DAVID FERNANDO PULIDO SALAMANCA</p>
             </div>
             <div class="footer" style="margin-top: 20px;">
                 <p>Motor GUR - Módulo de Tasación de Multas - INVIMA</p>
+                <p>Creado por: Ing DAVID FERNANDO PULIDO SALAMANCA</p>
                 <p>D.F.P.S</p>
-
             </div>
         </body>
         </html>
