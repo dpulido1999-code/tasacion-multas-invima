@@ -193,9 +193,10 @@ button:hover{
 <option value="Pequeña empresa">Pequeña empresa</option>
 <option value="Mediana empresa">Mediana empresa</option>
 <option value="Gran empresa">Gran empresa</option>
+<option value="Salud">Entidad prestadora de salud</option>
 </select>
 
-<label>SMMLV (año actual)</label>
+<label>SMLMV (año actual)</label>
 <div style="display:flex; align-items:center;">
   <input type="number" id="smmlv" value="1750905">
   <span style="margin-left:5px;">PESOS</span>
@@ -220,7 +221,8 @@ button:hover{
   <option value="departamento">Departamento</option>
   <option value="municipio">Municipio</option>
   <option value="hospital">Hospital</option>
-  <option value="privada">Privada</option>
+  <option value="privada-natural">Privada-natural</option>
+  <option value="privada-juridica">Privada-juridica</option>
  
 </select>
 
@@ -305,6 +307,7 @@ button:hover{
 <option value="Cosmeticos">Dirección de cosméticos,aseo,plaguisidas y productos de higiene doméstica</option>
 <option value="Dispositivos_medicos">Dirección de dispositivos medicos y otras tecnologias</option>
 <option value="invima">Dirección de operaciones sanitarias</option>
+
 </select>
 
 <!-- ========================= -->
@@ -379,12 +382,12 @@ Seleccione un tipo de publicidad primero...
 <label>Materialización del riesgo</label>
 <select id="desenlace" name="desenlace">
 <option value="">Seleccione</option>
-<option value="1">No hubo daño</option>
-<option value="4.2">Requiere intervención médica o quirurgica</option>
-<option value="4.4">Hospitalización inicial o prolongada</option>
-<option value="4.6">Daño de una función o estructura corporal</option>
-<option value="4.8">Enfermedad o daño que amenace la vida</option>
-<option value="5">Muerte</option>
+<option value="1">No hubo daño,si se genero riesgo</option>
+<option value="4.2">Daño leve:Requiere intervención médica o quirurgica</option>
+<option value="4.4">Daño moderado:Hospitalización inicial o prolongada</option>
+<option value="4.6">Daño estructural:Leción de organo o de función estructura corporal</option>
+<option value="4.8">Daño crítico:Enfermedad o daño que amenace la vida</option>
+<option value="5">Daño catastrofico:Fallecimiento,muerte</option>
 </select>
   
 
@@ -432,11 +435,11 @@ Seleccione un tipo de publicidad primero...
 <label>CRITERIOS DE GRADUACIÓN APLICABLES DESFAVORABLEMENTE AL INVESTIGADO</label>
 <div style="background:#f5f5f5;padding:10px;border-radius:5px; margin-top:5px;">
 <div style="margin-bottom:15px;">
-Daño o peligro generado a los intereses jurídicos protegidos por la ley. (+0.05)<br>
+Daño o peligro generado a los intereses jurídicos protegidos por la tutelados. (+0.05)<br>
 <input type="checkbox" class="agravante" value="0.05" name="agravantes">
 </div>
 <div style="margin-bottom:15px;">
-Beneficio económico obtenido por el infractor (+0.05)<br>
+Beneficio económico obtenido por el infractor para sí o a favor de un tercero. (+0.05)<br>
 <input type="checkbox" class="agravante" value="0.05" name="agravantes">
 </div>
 <div style="margin-bottom:15px;">
@@ -444,51 +447,57 @@ Reincidencia en la comisión de la infracción (+0.05)<br>
 <input type="checkbox" class="agravante" value="0.05" name="agravantes">
 </div>
 <div style="margin-bottom:15px;">
-Resistencia, negativa u obstrucción a la acción investigadora (+0.05)<br>
+Resistencia, negativa u obstrucción a la acción investigadora o de supervisión. (+0.05)<br>
 <input type="checkbox" class="agravante" value="0.05" name="agravantes">
 </div>
 <div style="margin-bottom:15px;">
-Uso de medios fraudulentos (+0.05)<br>
+Utilización de medios fraudulentos o utilización de persona interpuesta para ocultar la infracción u ocultar sus efectos. (+0.05)<br>
 <input type="checkbox" class="agravante" value="0.05" name="agravantes">
 </div>
 <div style="margin-bottom:15px;">
-Renuencia o desacato en el cumplimiento de órdenes (+0.05)<br>
+Grado de prudencia y diligencia con que se hayan atendido los deberes o se hayan aplicado las normas legales pertinentes. (+0.05)<br>
 <input type="checkbox" class="agravante" value="0.05" name="agravantes">
+</div>
+<div style="margin-bottom:15px;">
+Renuencia o desacato en el cumplimiento de las órdenes impartidas por la autoridad competente<input type="checkbox" class="agravante" value="0.05" name="agravantes">
+</div>
+<div style="margin-bottom:15px;">
+Reconocimiento o aceptación expresa de la infracción antes del decreto de pruebas.<input type="checkbox" class="agravante" value="0.05" name="agravantes">
 </div>
 </div>
 
 <label>CRITERIOS DE GRADUACIÓN APLICABLES FAVORABLEMENTE AL INVESTIGADO</label>
 <div style="background:#f5f5f5;padding:10px;border-radius:5px; margin-top:5px;">
 <div style="margin-bottom:15px;">
-Grado de prudencia y diligencia (-0.05)<br>
+Daño o peligro generado a los intereses jurídicos tutelados. (-0.05)<br>
 <input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
 <div style="margin-bottom:15px;">
-Reconocimiento o aceptación expresa de la infracción (-0.05)<br>
+Beneficio económico obtenido por el infractor para sí o a favor de un tercero. (-0.05)<br>
 <input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
 <div style="margin-bottom:15px;">
-La conducta o el infractor no han sido objeto de sanción anterior (-0.05)<br>
+Reincidencia en la comisión de la infracción. (-0.05)<br>
 <input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
 <div style="margin-bottom:15px;">
-Obrar por sugerencia o indicación de un superior jerárquico (-0.05)<br>
+Resistencia, negativa u obstrucción a la acción investigadora o de supervisión. (-0.05)<br>
 <input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
 <div style="margin-bottom:15px;">
-Confesar la infracción antes de la imputación de cargos (-0.05)<br>
+Utilización de medios fraudulentos o utilización de persona interpuesta para ocultar la infracción u ocultar sus efectos. (-0.05)<br>
 <input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
 <div style="margin-bottom:15px;">
-Reparar voluntariamente el daño causado (-0.05)<br>
+Grado de prudencia y diligencia con que se hayan atendido los deberes o se hayan aplicado las normas legales pertinentes. (-0.05)<br>
 <input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
 <div style="margin-bottom:15px;">
-Colaborar eficazmente con la investigación (-0.05)<br>
+Renuencia o desacato en el cumplimiento de las órdenes impartidas por la autoridad competente (-0.05)<br>
 <input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
 <div style="margin-bottom:15px;">
-Implementar voluntariamente medidas correctivas (-0.05)<br>
+Reconocimiento o aceptación expresa de la infracción antes del decreto de pruebas. (-0.05)<br>
 <input type="checkbox" class="atenuante" value="-0.05" name="atenuante">
 </div>
 </div>
@@ -553,7 +562,10 @@ const conductasPorProducto = {
     "Medicamentos": [
         { nombre: "Realizar actividades de preparación, adecuación y/o ajuste de dosis de medicamentos, por personal de enfermería, en áreas asistenciales, actividad que exclusivamente debe realizar un químico farmacéutico", riesgo: "Alto", valor: 5 },
         { nombre: "Realizar actividades de preparación, adecuación y/o ajuste de dosis de medicamentos sin contar con el certificado de cumplimiento de buenas prácticas de elaboración otorgado por el INVIMA", riesgo: "Alto", valor: 5 },
+        { nombre: "Realizar actividades de fabricación de aire medicinal en sitio por compresor, sin contar con el certificado de cumplimiento de Buenas Prácticas de Manufactura para la producción de aire medicinal otorgado por el Invima", riesgo: "Alto", valor: 5 },
+ 
         { nombre: "Adulterado", riesgo: "Alto", valor: 5 },
+
         { nombre: "Fraudulencia", riesgo: "Alto", valor: 5 }
     ],
     "Medicamentos_de_venta_libre": [
@@ -753,9 +765,11 @@ const conductasRiesgoPublico = [
 let tablaSeveridad = {
 
 leche_fisico: 3.0,
-leche_micro_calidad: 3.0,
-leche_micro_inocuidad: 5.0,
-leche_quimico_calidad: 3.0,
+leche_micro: 3.0,
+leche_calidad: 3.0,
+leche_inocuidad: 5.0,
+leche_quimico: 3.0,
+leche_calidad: 3.0,
 leche_quimico_inocuidad: 5.0,
 leche_eventos: 5.0,
 leche_rotulado: 5.0,
@@ -1039,7 +1053,7 @@ Blanqueador_P_Rotulado: 1.0,
 Blanqueador_P_registro: 1.0,
 Blanqueador_P_Documental: 1.0,
 Blanqueador_P_funcionalidad: 3.0,
-//8-Blanqueadores_Semisólido
+//8-Blanqueadores_Semisolido
 Blanqueador_S_Rotulado: 1.0,
 Blanqueador_S_registro: 1.0,
 Blanqueador_S_Documental: 1.0,
@@ -2715,7 +2729,6 @@ function convertirMultaAUVB(multaSMLMV, valorSMLMV, valorUVB) {
 // ============================================================
 // 2. FUNCIÓN DE CÁLCULO PRINCIPAL (CORREGIDA Y COMPLETA)
 // ============================================================
-// Parámetros Gumbel para Alimentos (según Excel)
 
 // ============================================================
 // FUNCIÓN GUMBEL CORREGIDA
@@ -2817,10 +2830,9 @@ function cargarRiesgoPublico() {
         checkbox.value = c.valor;
         checkbox.setAttribute("data-nombre", c.nombre);
         checkbox.setAttribute("data-riesgo", c.riesgo);
-        // ✅ CAMBIO AQUÍ: llama a ambas funciones
         checkbox.addEventListener('change', function() {
-            calcularSeveridadTotal();  // Actualiza el campo severidad_total visible
-            calcularMultaFrontend();   // Recalcula la multa
+            calcularSeveridadTotal();
+            calcularMultaFrontend();
         });
         label.appendChild(checkbox);
         let texto = c.nombre;
@@ -2905,64 +2917,117 @@ function calcularMultaFrontend() {
     
     // 1. Obtener valores con validación
     let tamanioSelect = document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value;
-    let afectacionTamanio = 3; // Valor por defecto
-    if (tamanioSelect === 'Microempresa') afectacionTamanio = 3;
-    else if (tamanioSelect === 'Pequeña empresa') afectacionTamanio = 4;
-    else if (tamanioSelect === 'Mediana empresa') afectacionTamanio = 4.5;
-    else if (tamanioSelect === 'Gran empresa') afectacionTamanio = 5;
+    let afectacionTamanio = 1; // Valor por defecto
+    if (tamanioSelect === 'Microempresa') afectacionTamanio = 1;
+    else if (tamanioSelect === 'Pequeña empresa') afectacionTamanio = 2;
+    else if (tamanioSelect === 'Mediana empresa') afectacionTamanio = 3;
+    else if (tamanioSelect === 'Gran empresa') afectacionTamanio = 4;
+    else if (tamanioSelect === 'Salud') afectacionTamanio = 5;
     
     // ==============================================
-    // NUEVO: SEVERIDAD incluyendo RIESGO PÚBLICO
+    // NUEVO: SEVERIDAD - CALCULADA COMO PROMEDIO PONDERADO
     // ==============================================
-    let severidadBase = parseFloat(document.getElementById('severidad')?.value) || 0;
-    let severidadMedida = parseFloat(document.getElementById('medida_final')?.value) || 0;
+    let severidadBase = 0;
+    let severidadValues = [];
     
-    // Calcular riesgo público (suma de todos los seleccionados)
-    let riesgoPublico = 0;
-    document.querySelectorAll('input[name="riesgo_publico_item"]:checked').forEach(cb => {
-        riesgoPublico += parseFloat(cb.value) || 0;
-    });
+    // Obtener valores de severidad de los riesgos seleccionados
+    let riesgoSelect = document.getElementById('riesgo');
+    for (let i = 0; i < riesgoSelect.selectedOptions.length; i++) {
+        let valor = tablaSeveridad[riesgoSelect.selectedOptions[i].value];
+        if (valor !== undefined && !isNaN(valor)) {
+            severidadValues.push(valor);
+        }
+    }
     
-    // Severidad total = severidad base + medidas sanitarias + riesgo público
-    let severidadTotal = severidadBase + severidadMedida + riesgoPublico;
-    if (severidadTotal > 5) severidadTotal = 5;
-  
+    // Calcular el promedio de severidad (si hay valores)
+    if (severidadValues.length > 0) {
+        let suma = severidadValues.reduce((a, b) => a + b, 0);
+        severidadBase = suma / severidadValues.length;
+    }
+    // Si no hay valores, usar 0 (se mostrará como 0.00)
+    
+    // Redondear a 2 decimales
+    severidadBase = Math.round(severidadBase * 100) / 100;
+    document.getElementById('severidad').value = severidadBase.toFixed(2);
     
     // ==============================================
-    // NUEVO: CONDUCTA incluyendo CONDUCTAS DE PUBLICIDAD
+    // NUEVO: CONDUCTA - PROMEDIO PONDERADO (producto + publicidad)
     // ==============================================
-    let conductaProducto = 1; // Valor por defecto
-    let conductasSeleccionadas = [];
+    let conductaProducto = 0;
+    let conductaProductoValues = [];
     
     // Conductas del producto
     document.querySelectorAll('input[name="conducta_item"]:checked').forEach(cb => {
         let valor = parseFloat(cb.value);
-        conductasSeleccionadas.push({
-            nombre: cb.getAttribute('data-nombre') || 'Sin nombre',
-            riesgo: cb.getAttribute('data-riesgo') || 'Desconocido',
-            valor: valor,
-            tipo: 'producto'
-        });
-        if (valor > conductaProducto) conductaProducto = valor;
+        if (!isNaN(valor) && valor > 0) {
+            conductaProductoValues.push(valor);
+        }
     });
+    
+    // Calcular promedio de conductas del producto
+    if (conductaProductoValues.length > 0) {
+        let suma = conductaProductoValues.reduce((a, b) => a + b, 0);
+        conductaProducto = suma / conductaProductoValues.length;
+    }
     
     // Conductas de publicidad
     let conductaPublicidad = 0;
+    let conductaPublicidadValues = [];
     document.querySelectorAll('input[name="conducta_publicidad_item"]:checked').forEach(cb => {
         let valor = parseFloat(cb.value);
-        conductasSeleccionadas.push({
-            nombre: cb.getAttribute('data-nombre') || 'Sin nombre',
-            riesgo: cb.getAttribute('data-riesgo') || 'Desconocido',
-            valor: valor,
-            tipo: 'publicidad'
-        });
-        if (valor > conductaPublicidad) conductaPublicidad = valor;
+        if (!isNaN(valor) && valor > 0) {
+            conductaPublicidadValues.push(valor);
+        }
     });
     
-    // Usar el MAYOR valor entre conducta del producto y conducta de publicidad
-    let conductaFinal = Math.max(conductaProducto, conductaPublicidad);
-    if (conductaFinal === 0) conductaFinal = 1;
+    // Calcular promedio de conductas de publicidad
+    if (conductaPublicidadValues.length > 0) {
+        let suma = conductaPublicidadValues.reduce((a, b) => a + b, 0);
+        conductaPublicidad = suma / conductaPublicidadValues.length;
+    }
     
+    // Combinar ambos promedios (si ambos tienen valores, hacer un promedio de los promedios)
+    let conductaFinal = 1; // Valor por defecto
+    let allConductaValues = [];
+    if (conductaProducto > 0) allConductaValues.push(conductaProducto);
+    if (conductaPublicidad > 0) allConductaValues.push(conductaPublicidad);
+    
+    if (allConductaValues.length > 0) {
+        let suma = allConductaValues.reduce((a, b) => a + b, 0);
+        conductaFinal = suma / allConductaValues.length;
+    }
+    
+    // Redondear a 1 decimal (para que sea 1, 2, 3, 4 o 5)
+    conductaFinal = Math.round(conductaFinal);
+    if (conductaFinal < 1) conductaFinal = 1;
+    if (conductaFinal > 5) conductaFinal = 5;
+    
+    // ==============================================
+    // RIESGO PÚBLICO - PROMEDIO PONDERADO
+    // ==============================================
+    let riesgoPublico = 0;
+    let riesgoPublicoValues = [];
+    document.querySelectorAll('input[name="riesgo_publico_item"]:checked').forEach(cb => {
+        let valor = parseFloat(cb.value) || 0;
+        if (valor > 0) {
+            riesgoPublicoValues.push(valor);
+        }
+    });
+    
+    if (riesgoPublicoValues.length > 0) {
+        let suma = riesgoPublicoValues.reduce((a, b) => a + b, 0);
+        riesgoPublico = suma / riesgoPublicoValues.length;
+    }
+    riesgoPublico = Math.round(riesgoPublico * 100) / 100;
+    
+    // ==============================================
+    // SEVERIDAD TOTAL = severidadBase + medidaSanitaria + riesgoPublico
+    // ==============================================
+    let severidadTotal = parseFloat(document.getElementById('severidad_total').value) || 0;
+    
+    // ==============================================
+    // CONTINUAR CON EL CÁLCULO DE LA MULTA
+    // ==============================================
     let laboratorio = parseFloat(document.getElementById('laboratorio')?.value) || 1;
     let capacidadEconomica = parseFloat(document.getElementById('ponderacion_final')?.value) || 0.05;
     
@@ -2973,6 +3038,7 @@ function calcularMultaFrontend() {
     // 2. Calcular R (usando severidadTotal y conductaFinal)
     let R = (afectacionTamanio * 0.3) + (severidadTotal * 0.3) + (conductaFinal * 0.3) + (laboratorio * 0.1);
     R = Math.min(5, Math.max(1, R));
+    R = Math.round(R * 100) / 100;
     
     // 3. Calcular FD
     let fdSMLMV = gumbelTransform(R, direccionMisional);
@@ -2988,8 +3054,8 @@ function calcularMultaFrontend() {
     let multaFinalSmlmv = fdSMLMV * ajusteNeto * capacidadEconomica * factorExtra;
 
     // LÍMITES: mínimo 1 SMLMV, máximo 10000 SMLMV
-    if (multaFinalSmlmv < 1) {
-        multaFinalSmlmv = 1;
+    if (multaFinalSmlmv < 2) {
+        multaFinalSmlmv = 2;
     }
     if (multaFinalSmlmv > 10000) {
         multaFinalSmlmv = 10000;
@@ -2999,17 +3065,35 @@ function calcularMultaFrontend() {
     let multaFinalPesos = multaFinalSmlmv * smmlv;
     let multaFinalUVB = convertirMultaAUVB(multaFinalSmlmv, smmlv, uvb);
     
-    // Determinar icono de riesgo
+    // Determinar icono de riesgo basado en conductaFinal
     let riesgoIcono = "", riesgoTexto = "";
-    if (conductaFinal === 5) { riesgoIcono = "🔴"; riesgoTexto = "Alto"; }
-    else if (conductaFinal === 3) { riesgoIcono = "🟡"; riesgoTexto = "Moderado"; }
+    if (conductaFinal >= 4.5) { riesgoIcono = "🔴"; riesgoTexto = "Alto"; }
+    else if (conductaFinal >= 2.5) { riesgoIcono = "🟡"; riesgoTexto = "Moderado"; }
     else { riesgoIcono = "🟢"; riesgoTexto = "Bajo"; }
     
     // Resumen de conductas (producto + publicidad)
+    let conductasSeleccionadas = [];
+    document.querySelectorAll('input[name="conducta_item"]:checked').forEach(cb => {
+        conductasSeleccionadas.push({
+            nombre: cb.getAttribute('data-nombre') || 'Sin nombre',
+            riesgo: cb.getAttribute('data-riesgo') || 'Desconocido',
+            valor: parseFloat(cb.value) || 0,
+            tipo: 'producto'
+        });
+    });
+    document.querySelectorAll('input[name="conducta_publicidad_item"]:checked').forEach(cb => {
+        conductasSeleccionadas.push({
+            nombre: cb.getAttribute('data-nombre') || 'Sin nombre',
+            riesgo: cb.getAttribute('data-riesgo') || 'Desconocido',
+            valor: parseFloat(cb.value) || 0,
+            tipo: 'publicidad'
+        });
+    });
+    
     let resumenConductas = "";
     if (conductasSeleccionadas.length > 0) {
         let listaConductas = conductasSeleccionadas.map(c => `• [${c.tipo === 'producto' ? 'Producto' : 'Publicidad'}] ${c.nombre} (${c.valor} pts - ${c.riesgo})`).join('<br>');
-        resumenConductas = `<br><br><strong>📋 Conductas seleccionadas (${conductasSeleccionadas.length}):</strong><br>${listaConductas}<br><strong>➡️ Valor tomado: ${riesgoIcono} ${conductaFinal} puntos (Máximo - Riesgo ${riesgoTexto})</strong>`;
+        resumenConductas = `<br><br><strong>📋 Conductas seleccionadas (${conductasSeleccionadas.length}):</strong><br>${listaConductas}<br><strong>➡️ Valor promedio: ${riesgoIcono} ${conductaFinal} puntos (Riesgo ${riesgoTexto})</strong>`;
     }
     
     // Mostrar resultados
@@ -3030,7 +3114,11 @@ function calcularMultaFrontend() {
     let resultadoPesos = document.getElementById('resultado_pesos');
     if (resultadoPesos) resultadoPesos.innerHTML = multaFinalPesos.toLocaleString('es-CO');
     let detalleFinal = document.getElementById('detalle_final');
-    if (detalleFinal) detalleFinal.innerHTML = `R = ${R.toFixed(2)} | Conducta = ${riesgoIcono} ${conductaFinal} pts (${riesgoTexto}) | FD = Gumbel(${R.toFixed(2)}) = ${fdSMLMV.toFixed(2)} | Multa = ${fdSMLMV.toFixed(2)} × ${ajusteNeto.toFixed(2)} × ${capacidadEconomica.toFixed(4)} = ${multaFinalSmlmv.toFixed(2)} SMLMV (≈ ${multaFinalUVB.toFixed(2)} UVB)${resumenConductas}`;
+    if (detalleFinal) {
+        let detalle = `R = ${R.toFixed(2)} | Severidad promedio = ${severidadBase.toFixed(2)} | Conducta promedio = ${riesgoIcono} ${conductaFinal} pts (${riesgoTexto}) | FD = Gumbel(${R.toFixed(2)}) = ${fdSMLMV.toFixed(2)} | Multa = ${fdSMLMV.toFixed(2)} × ${ajusteNeto.toFixed(2)} × ${capacidadEconomica.toFixed(4)} = ${multaFinalSmlmv.toFixed(2)} SMLMV (≈ ${multaFinalUVB.toFixed(2)} UVB)`;
+        if (resumenConductas) detalle += resumenConductas;
+        detalleFinal.innerHTML = detalle;
+    }
 }
  
 
@@ -3068,15 +3156,14 @@ document.getElementById('tipo_producto').addEventListener('change', function() {
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.name = "conducta_item";
-            checkbox.value = c.valor;  // Guardamos el valor numérico
-            checkbox.setAttribute("data-nombre", c.nombre);  // ⚠️ IMPORTANTE: Asignar el nombre
-            checkbox.setAttribute("data-riesgo", c.riesgo);  // Asignar el riesgo
-            checkbox.setAttribute("data-valor", c.valor);    // Asignar el valor
-            checkbox.addEventListener('change', calcularMultaFrontend); // Recalcular al cambiar
+            checkbox.value = c.valor;
+            checkbox.setAttribute("data-nombre", c.nombre);
+            checkbox.setAttribute("data-riesgo", c.riesgo);
+            checkbox.setAttribute("data-valor", c.valor);
+            checkbox.addEventListener('change', calcularMultaFrontend);
             
             label.appendChild(checkbox);
             
-            // Mostrar nombre y nivel de riesgo con color
             let texto = c.nombre;
             if (c.riesgo === "Alto") {
                 texto += " 🔴 (Alto riesgo - 5 puntos)";
@@ -3109,37 +3196,57 @@ document.getElementById("medida").addEventListener("change", function(){
 
 function calcularSeveridad(){
     let select = document.getElementById("riesgo");
-    let total = 0;
+    let valores = [];
     for(let i = 0; i < select.selectedOptions.length; i++){
-        let valor = select.selectedOptions[i].value;
-        total += tablaSeveridad[valor] || 0;
+        let valor = tablaSeveridad[select.selectedOptions[i].value];
+        if (valor !== undefined && !isNaN(valor)) {
+            valores.push(valor);
+        }
     }
-    if (total > 5) total = 5;
+    let total = 0;
+    if (valores.length > 0) {
+        let suma = valores.reduce((a, b) => a + b, 0);
+        total = suma / valores.length;
+    }
+    // Si no hay valores, total queda en 0
     document.getElementById("severidad").value = total.toFixed(2);
     calcularSeveridadTotal();
-
-    
 }
 function calcularSeveridadTotal(){
     let severidad = parseFloat(document.getElementById("severidad").value) || 0;
     let medida = parseFloat(document.getElementById("medida_final").value) || 0;
     
-    
-    // NUEVO: Calcular riesgo público (suma de todos los seleccionados)
+    // Calcular riesgo público como promedio
     let riesgoPublico = 0;
+    let riesgoPublicoValues = [];
     document.querySelectorAll('input[name="riesgo_publico_item"]:checked').forEach(cb => {
-        riesgoPublico += parseFloat(cb.value) || 0;
+        let valor = parseFloat(cb.value) || 0;
+        if (valor > 0) {
+            riesgoPublicoValues.push(valor);
+        }
     });
+    if (riesgoPublicoValues.length > 0) {
+        let suma = riesgoPublicoValues.reduce((a, b) => a + b, 0);
+        riesgoPublico = suma / riesgoPublicoValues.length;
+    }
+    riesgoPublico = Math.round(riesgoPublico * 100) / 100;
     
-    let severidadTotal = severidad + medida + riesgoPublico;  // ← AQUÍ EL CAMBIO
+    // ✅ CALCULA EL PROMEDIO DE LOS TRES COMPONENTES
+    let valores = [];
+    if (severidad > 0) valores.push(severidad);
+    if (medida > 0) valores.push(medida);
+    if (riesgoPublico > 0) valores.push(riesgoPublico);
+    
+    let severidadTotal = 0;
+    if (valores.length > 0) {
+        let suma = valores.reduce((a, b) => a + b, 0);
+        severidadTotal = suma / valores.length;  // ✅ PROMEDIO
+    }
+    
     if (severidadTotal > 5) severidadTotal = 5;
+    severidadTotal = Math.round(severidadTotal * 100) / 100;
     document.getElementById("severidad_total").value = severidadTotal.toFixed(2);
-    
-
-    
-   
 }
-
 document.getElementById("tipo_entidad").addEventListener("change", function(){
     let tipo = this.value;
     let select = document.getElementById("categoria_entidad");
@@ -3166,11 +3273,15 @@ document.getElementById("tipo_entidad").addEventListener("change", function(){
         select.innerHTML += "<option value='0.5'>Nivel III</option>";
         select.innerHTML += "<option value='0.25'>Nivel IV</option>";
     }
-    if(tipo === "privada"){
-        select.innerHTML += "<option value='1'>Privada</option>";
+    if(tipo === "privada-natural"){
+        select.innerHTML += "<option value='0.2'>Privada-natural</option>";
 
     }
-    calcularPonderacionFinal(); // Recalcular al cambiar
+    if(tipo === "privada-juridica"){
+    select.innerHTML += "<option value='0.4'>Privada-juridica</option>";
+
+    }
+    calcularPonderacionFinal();
 });
 document.getElementById("tipo_persona").addEventListener("change", function(){
     let tipo = this.value;
@@ -3218,32 +3329,41 @@ document.getElementById("tipo_persona").addEventListener("change", function(){
         contSisben.style.display = "none";
         contEmpresa.style.display = "none";
     }
-    calcularPonderacionFinal(); // Recalcular al cambiar
+    calcularPonderacionFinal();
 });
-
 
 function calcularPonderacionFinal() {
     const tipoPersona = document.getElementById("tipo_persona")?.value || "";
     const utilidad = parseFloat(document.getElementById("utilidades")?.value) || 0;
     const categoriaEntidad = parseFloat(document.getElementById("categoria_entidad")?.value) || 0;
     
-    let valores = [utilidad, categoriaEntidad];
+    let valores = [];
+    
+    // Solo agregar si tienen valor válido
+    if (utilidad > 0) valores.push(utilidad);
+    if (categoriaEntidad > 0) valores.push(categoriaEntidad);
     
     if(tipoPersona === "natural") {
         const sisbenVal = document.getElementById("sisben")?.value;
-        if(sisbenVal && sisbenVal !== "") valores.push(parseFloat(sisbenVal));
+        if(sisbenVal && sisbenVal !== "") {
+            const numVal = parseFloat(sisbenVal);
+            if (!isNaN(numVal) && numVal > 0) valores.push(numVal);
+        }
     }
     if(tipoPersona === "juridica") {
         const empresaVal = document.getElementById("empresa")?.value;
-        if(empresaVal && empresaVal !== "") valores.push(parseFloat(empresaVal));
+        if(empresaVal && empresaVal !== "") {
+            const numVal = parseFloat(empresaVal);
+            if (!isNaN(numVal) && numVal > 0) valores.push(numVal);
+        }
     }
     
-    // Filtrar valores válidos
-    valores = valores.filter(v => !isNaN(v) && v > 0);
-    
-    let ponderado = 1.00;
+    let ponderado = 0.00;
     if (valores.length > 0) {
-        ponderado = Math.max(...valores);
+        // ✅ CALCULA EL PROMEDIO en lugar del máximo
+        let suma = valores.reduce((a, b) => a + b, 0);
+        ponderado = suma / valores.length;
+        ponderado = Math.round(ponderado * 10000) / 10000;
     }
     
     let ponderacionFinal = document.getElementById("ponderacion_final");
@@ -3255,43 +3375,43 @@ function calcularPonderacionFinal() {
 function calcularAfectacion(){
     let sumaAgrav = 0, sumaAtenu = 0;
     
-    // NUEVO: Obtener el valor del desenlace
     let desenlaceRaw = parseFloat(document.getElementById('desenlace')?.value) || 0;
     
-    // Convertir desenlace (1, 4.2, 4.4, 4.6, 4.8, 5) a un valor entre 0 y 0.46
     let desenlaceAjustado = 0;
     if (desenlaceRaw === 4.2) desenlaceAjustado = 0.08;
     else if (desenlaceRaw === 4.4) desenlaceAjustado = 0.16;
     else if (desenlaceRaw === 4.6) desenlaceAjustado = 0.24;
     else if (desenlaceRaw === 4.8) desenlaceAjustado = 0.32;
     else if (desenlaceRaw === 5) desenlaceAjustado = 0.40;
-    // Si es 1 (no hubo daño) o cualquier otro valor, queda en 0
     
     document.querySelectorAll("input[name='agravantes']:checked").forEach(el => sumaAgrav += parseFloat(el.value));
     document.querySelectorAll("input[name='atenuante']:checked").forEach(el => sumaAtenu += parseFloat(el.value));
     
-    // Límites según hoja Tablas de referencia del Excel oficial
     sumaAgrav = Math.min(sumaAgrav, 0.46);
     sumaAtenu = Math.min(Math.abs(sumaAtenu), 0.38);
-    
-    // NUEVO: Limitar el desenlace ajustado para que no exceda 0.46
     desenlaceAjustado = Math.min(desenlaceAjustado, 0.46);
     
-    // Incluir el desenlace en la suma total
     let total = sumaAgrav + desenlaceAjustado - sumaAtenu;
-    total = Math.min(0.46, Math.max(-0.38, total));  // Límites NO se modifican
+    total = Math.min(0.46, Math.max(-0.38, total));
     
     let afectacionInput = document.getElementById("afectacion");
     if (afectacionInput) {
         afectacionInput.value = total.toFixed(2);
     }
 }
-
 function calcularMedidaFinal(){
     let select = document.getElementById("medida");
-    let total = 0;
+    let valores = [];
     for(let i = 0; i < select.selectedOptions.length; i++){
-        total += parseFloat(select.selectedOptions[i].value) || 0;
+        let valor = parseFloat(select.selectedOptions[i].value) || 0;
+        if (valor > 0) {
+            valores.push(valor);
+        }
+    }
+    let total = 0;
+    if (valores.length > 0) {
+        let suma = valores.reduce((a, b) => a + b, 0);
+        total = suma / valores.length;  // ✅ PROMEDIO
     }
 
     let medidaFinal = document.getElementById("medida_final");
@@ -3322,16 +3442,14 @@ document.getElementById("medida").addEventListener("change", () => {
 document.getElementById("calcularBtn").addEventListener("click", calcularMultaFrontend);
 document.getElementById("guardarBtn").addEventListener("click", generarPDF);
 
-// NUEVO: Evento para el desenlace
 let desenlaceSelect = document.getElementById("desenlace");
 if (desenlaceSelect) {
     desenlaceSelect.addEventListener("change", function() {
-        calcularAfectacion();      // Actualiza la afectación con el nuevo desenlace
-        calcularMultaFrontend();   // Recalcula la multa automáticamente
+        calcularAfectacion();
+        calcularMultaFrontend();
     });
 }
 
-// Evento para dirección misional y otros campos que afectan el cálculo
 let direccionMisionalSelect = document.getElementById("direccion_misional");
 if (direccionMisionalSelect) {
     direccionMisionalSelect.addEventListener("change", calcularMultaFrontend);
@@ -3353,7 +3471,7 @@ window.addEventListener('DOMContentLoaded', () => {
     calcularAfectacion();
     calcularMedidaFinal();
     cargarRiesgoPublico();
-    calcularMultaFrontend(); // Calcular multa inicial
+    calcularMultaFrontend();
 });
 // ESTABLECIMIENTO → GRUPO PRODUCTO (Tus datos originales)
 document.getElementById("establecimiento").addEventListener("change", function(){
@@ -3624,10 +3742,13 @@ riesgo.innerHTML = "<option value=''>Seleccione riesgo</option>";
 if(grupo == "1.Leche,derivados"){
 
 riesgo.innerHTML += "<option value='leche_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='leche_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='leche_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='leche_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='leche_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='leche_micro'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='leche_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='leche_inocuidad'>Alteración del producto -inocuidad</option>";
+riesgo.innerHTML += "<option value='leche_quimico'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='leche_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='leche_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='leche_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='leche_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='leche_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='leche_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3639,10 +3760,13 @@ riesgo.innerHTML += "<option value='leche_materias'>Control inadecuado de materi
 if(grupo == "2.Grasas,aceites"){
 
 riesgo.innerHTML += "<option value='grasas_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='grasas_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='grasas_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='grasas_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='grasas_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='grasas_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='grasas_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='grasas_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='grasas_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='grasas_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='grasas_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='grasas_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='grasas_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='grasas_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='grasas_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3652,10 +3776,13 @@ riesgo.innerHTML += "<option value='grasas_materias'>Control inadecuado de mater
 if(grupo == "3.hidratantes"){
 
 riesgo.innerHTML += "<option value='hidratantes_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='hidratantes_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='hidratantes_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='hidratantes_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='hidratantes_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='hidratantes_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='hidratantes_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='hidratantes_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='hidratantes_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='hidratantes_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='hidratantes_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='hidratantes_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='hidratantes_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='hidratantes_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='hidratantes_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3665,10 +3792,13 @@ riesgo.innerHTML += "<option value='hidratantes_materias'>Control inadecuado de 
 if(grupo == "4.Frutas,vegetales"){
 
 riesgo.innerHTML += "<option value='frutas_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='frutas_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='frutas_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='frutas_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='frutas_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='frutas_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='frutas_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='frutas_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='frutas_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='frutas_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='frutas_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='frutas_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='frutas_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='frutas_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='frutas_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3679,10 +3809,13 @@ riesgo.innerHTML += "<option value='frutas_materias'>Control inadecuado de mater
 if(grupo == "5.Confitería"){
 
 riesgo.innerHTML += "<option value='confiteria_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='confiteria_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='confiteria_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='confiteria_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='confiteria_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='confiteria_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='confiteria_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='confiteria_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='confiteria_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='confiteria_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='confiteria_quimico_inocuidad'>Alteración del producto - inocuidad </option>";
+riesgo.innerHTML += "<option value='confiteria_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='confiteria_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='confiteria_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='confiteria_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3693,10 +3826,13 @@ riesgo.innerHTML += "<option value='confiteria_materias'>Control inadecuado de m
 if(grupo == "6.Cereales"){
 
 riesgo.innerHTML += "<option value='confiteria_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='confiteria_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='confiteria_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='confiteria_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='confiteria_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='confiteria_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='confiteria_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='confiteria_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='confiteria_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='confiteria_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='confiteria_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='confiteria_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='confiteria_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='confiteria_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='confiteria_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3705,10 +3841,13 @@ riesgo.innerHTML += "<option value='confiteria_materias'>Control inadecuado de m
 if(grupo == "7.Pan_Pananadería"){
 
 riesgo.innerHTML += "<option value='panaderia_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='panaderia_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='panaderia_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='panaderia_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='panaderia_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='panaderia_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='panaderia_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='panaderia_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='panaderia_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='panaderia_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='panaderia_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='panaderia_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='panaderia_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='panaderia_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='panaderia_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3717,10 +3856,13 @@ riesgo.innerHTML += "<option value='panaderia_materias'>Control inadecuado de ma
 if(grupo == "8.productos_cárnicos"){
 
 riesgo.innerHTML += "<option value='carne_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='carne_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='carne_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='carne_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='carne_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='carne_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='carne_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='carne_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='carne_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='carne_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='carne_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='carne_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='carne_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='carne_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='carne_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3729,10 +3871,13 @@ riesgo.innerHTML += "<option value='carne_materias'>Control inadecuado de materi
 if(grupo == "9.Productos_Pesca"){
 
 riesgo.innerHTML += "<option value='pesca_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='pesca_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='pesca_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='pesca_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='pesca_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='pesca_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='pesca_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='pesca_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='pesca_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='pesca_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='pesca_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='pesca_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='pesca_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='pesca_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='pesca_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3742,10 +3887,13 @@ if(grupo == "10.Productos_base_huevo"){
 
 riesgo.innerHTML += "<option value='huevo_fisico'>Alteración del producto - Físico</option>";
 
-riesgo.innerHTML += "<option value='huevo_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='huevo_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='huevo_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='huevo_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='huevo_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='huevo_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='huevo_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='huevo_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='huevo_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='huevo_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='huevo_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='huevo_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='huevo_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='huevo_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3754,10 +3902,13 @@ riesgo.innerHTML += "<option value='huevo_materias'>Control inadecuado de materi
 if(grupo == "11.Productos_componente_principal_el_Azúcar"){
 
 riesgo.innerHTML += "<option value='azucar_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='azucar_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='azucar_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='azucar_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='azucar_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='azucar_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='azucar_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='azucar_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='azucar_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='azucar_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='azucar_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='azucar_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='azucar_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='azucar_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='azucar_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3766,10 +3917,13 @@ riesgo.innerHTML += "<option value='azucar_materias'>Control inadecuado de mater
 if(grupo == "12.Miel_cera_otros_subproductos_de_origen_apícola"){
 
 riesgo.innerHTML += "<option value='apicola_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='apicola_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='apicola_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='apicola_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='apicola_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='apicola_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='apicola_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='apicola_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='apicola_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='apicola_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='apicola_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='apicola_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='apicola_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='apicola_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='apicola_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3778,10 +3932,13 @@ riesgo.innerHTML += "<option value='apicola_materias'>Control inadecuado de mate
 if(grupo == "13.SAL,Hierbas_aromáticas"){
 
 riesgo.innerHTML += "<option value='sal_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='sal_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='sal_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='sal_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='sal_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='sal_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='sal_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='sal_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='sal_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='sal_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='sal_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='sal_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='sal_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='sal_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='sal_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3790,10 +3947,13 @@ riesgo.innerHTML += "<option value='sal_materias'>Control inadecuado de materias
 if(grupo == "14.Alimentos_nutricionales"){
 
 riesgo.innerHTML += "<option value='nutricionales_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='nutricionales_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='nutricionales_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='nutricionales_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='nutricionales_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='nutricionales_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='nutricionales_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='nutricionales_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='nutricionales_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='nutricionales_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='nutricionales_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='nutricionales_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='nutricionales_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='nutricionales_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='nutricionales_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3802,10 +3962,13 @@ riesgo.innerHTML += "<option value='nutricionales_materias'>Control inadecuado d
 if(grupo == "15.Alimentos_compuestos"){
 
 riesgo.innerHTML += "<option value='compuestos_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='compuestos_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='compuestos_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='compuestos_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='compuestos_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='compuestos_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='compuestos_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='compuestos_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='compuestos_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='compuestos_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='compuestos_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='compuestos_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='compuestos_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='compuestos_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='compuestos_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3814,10 +3977,13 @@ riesgo.innerHTML += "<option value='compuestos_materias'>Control inadecuado de m
 if(grupo == "16.Bebidas_alcohólicas_embriagantes"){
 
 riesgo.innerHTML += "<option value='embriagante_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='embriagante_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='embriagante_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='embriagante_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='embriagante_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='embriagante_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='embriagante_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='embriagante_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='embriagante_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='embriagante_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='embriagante_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='embriagante_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='embriagante_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='embriagante_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='embriagante_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3826,10 +3992,13 @@ riesgo.innerHTML += "<option value='embriagante_materias'>Control inadecuado de 
 if(grupo == "17.Aditivos"){
 
 riesgo.innerHTML += "<option value='aditivos_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='aditivos_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='aditivos_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='aditivos_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='aditivos_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='aditivos_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='aditivos_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='aditivos_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='aditivos_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='aditivos_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='aditivos_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='aditivos_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='aditivos_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='aditivos_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='aditivos_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3838,10 +4007,13 @@ riesgo.innerHTML += "<option value='aditivos_materias'>Control inadecuado de mat
 if(grupo == "18.Objetos,envases_equipamentos"){
 
 riesgo.innerHTML += "<option value='equipamento_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='equipamento_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='equipamento_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='equipamento_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='equipamento_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='equipamento_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='equipamento_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='equipamento_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='equipamento_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='equipamento_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='equipamento_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='equipamento_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='equipamento_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='equipamento_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='equipamento_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -3850,10 +4022,13 @@ riesgo.innerHTML += "<option value='equipamento_materias'>Control inadecuado de 
 if(grupo == "19.Materias_primas_industria"){
 
 riesgo.innerHTML += "<option value='materia_fisico'>Alteración del producto - Físico</option>";
-riesgo.innerHTML += "<option value='materia_micro_calidad'>Alteración del producto - microbiológicos - calidad</option>";
-riesgo.innerHTML += "<option value='materia_micro_inocuidad'>Alteración del producto - microbiológicos - inocuidad</option>";
-riesgo.innerHTML += "<option value='materia_quimico_calidad'>Alteración del producto - químico - calidad</option>";
-riesgo.innerHTML += "<option value='materia_quimico_inocuidad'>Alteración del producto - químico - inocuidad - adulterantes</option>";
+riesgo.innerHTML += "<option value='materia_micro_calidad'>Alteración del producto - microbiológicos</option>";
+riesgo.innerHTML += "<option value='materia_micro_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='materia_micro_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='materia_quimico_calidad'>Alteración del producto - químico</option>";
+riesgo.innerHTML += "<option value='materia_quimico_calidad'>Alteración del producto - calidad</option>";
+riesgo.innerHTML += "<option value='materia_quimico_inocuidad'>Alteración del producto - inocuidad</option>";
+riesgo.innerHTML += "<option value='materia_quimico_inocuidad'>Alteración del producto - adulterantes</option>";
 riesgo.innerHTML += "<option value='materia_eventos'>Eventos Adversos en Salud Pública (Alertas,ETA) en los ultimos 3 años</option>";
 riesgo.innerHTML += "<option value='materia_rotulado'>Incumplimiento de rotulado</option>";
 riesgo.innerHTML += "<option value='materia_materias'>Control inadecuado de materias primas e insumos</option>";
@@ -6487,8 +6662,9 @@ window.addEventListener('DOMContentLoaded', () => {
     calcularAfectacion();
     calcularMedidaFinal();
     cargarRiesgoPublico();
-    calcularMultaFrontend(); // Calcular multa inicial
+    calcularMultaFrontend();
 });
+
 // ============================================================
 // FUNCIÓN PARA GENERAR PDF - VERSIÓN CORREGIDA
 // ============================================================
@@ -6558,8 +6734,6 @@ function generarPDF() {
         }
     });
     
-    // Nota: Ya no existen los criterios de graduación como checkboxes separados, se usan agravantes y atenuantes.
-    
     const afectacion = document.getElementById('afectacion').value || '0';
     
     const resultadoR = document.getElementById('resultado_r').innerHTML || 'No calculado';
@@ -6579,22 +6753,29 @@ function generarPDF() {
     
     const tamanioVal = document.getElementById('Tamaño_establecimiento')?.selectedOptions[0]?.value;
     let A = 3;
-    if (tamanioVal === 'Microempresa') A = 3;
-    else if (tamanioVal === 'Pequeña empresa') A = 4;
-    else if (tamanioVal === 'Mediana empresa') A = 4.5;
-    else if (tamanioVal === 'Gran empresa') A = 5;
+    if (tamanioVal === 'Microempresa') A = 1;
+    else if (tamanioVal === 'Pequeña empresa') A = 2;
+    else if (tamanioVal === 'Mediana empresa') A = 3;
+    else if (tamanioVal === 'Gran empresa') A = 4;
+    else if (tamanioVal === 'Salud') A = 5;
     
     let S = parseFloat(severidadTotal);
     if (isNaN(S)) S = 0;
     if (S > 5) S = 5;
     
     let C = 1;
-    let maxConducta = 0;
+    let conductaValues = [];
     document.querySelectorAll('input[name="conducta_item"]:checked').forEach(cb => {
         let val = parseFloat(cb.value);
-        if (val > maxConducta) maxConducta = val;
+        if (val > 0) conductaValues.push(val);
     });
-    if (maxConducta > 0) C = maxConducta;
+    if (conductaValues.length > 0) {
+        let suma = conductaValues.reduce((a, b) => a + b, 0);
+        C = suma / conductaValues.length;
+        C = Math.round(C);
+        if (C < 1) C = 1;
+        if (C > 5) C = 5;
+    }
     
     let L = parseFloat(document.getElementById('laboratorio').value) || 1;
     
@@ -6858,9 +7039,9 @@ function generarPDF() {
             <h3>📊 1. VARIABLES DE ENTRADA</h3>
             <table>
                 <tr style="background-color: #e3f2fd;"><th>Variable</th><th>Valor</th><th>Descripción</th></tr>
-                <tr><td><strong>A (Tamaño establecimiento)</strong></td><td>${A}</td><td>Microempresa=3, Pequeña=4, Mediana=4.5, Gran empresa=5</td></tr>
-                <tr><td><strong>S (Severidad total)</strong></td><td>${S}</td><td>Suma de riesgos + medidas sanitarias (acotado a 5)</td></tr>
-                <tr><td><strong>C (Conducta)</strong></td><td>${C}</td><td>Bajo=1, Moderado=3, Alto=5</td></tr>
+                <tr><td><strong>A (Tamaño establecimiento)</strong></td><td>${A}</td><td>Microempresa=1, Pequeña=2, Mediana=3, Gran empresa=4 , Salud=5 </td></tr>
+                <tr><td><strong>S (Severidad total)</strong></td><td>${S.toFixed(2)}</td><td>Promedio de riesgos + medidas sanitarias + riesgo público (acotado a 5)</td></tr>
+                <tr><td><strong>C (Conducta promedio)</strong></td><td>${C}</td><td>Promedio de conductas seleccionadas (redondeado a 1, 2, 3, 4 o 5)</td></tr>
                 <tr><td><strong>L (Laboratorio)</strong></td><td>${L}</td><td>Sin rechazo=1, Con rechazo=5</td></tr>
                 <tr><td><strong>Dirección misional</strong></td><td>${dirTexto}</td><td>Determina el factor de escala</td></tr>
                 <tr><td><strong>Factor de escala</strong></td><td>${factorEscala}</td><td>Alimentos/Cosméticos=1.0, Medicamentos/Dispositivos=3.0</td></tr>
@@ -6881,8 +7062,8 @@ function generarPDF() {
             <div class="explicacion-box">
                 <p><strong>Fórmula:</strong> R = (A × 0.3) + (S × 0.3) + (C × 0.3) + (L × 0.1)</p>
                 <p><strong>Reemplazando:</strong></p>
-                <p>R = (${A} × 0.3) + (${S} × 0.3) + (${C} × 0.3) + (${L} × 0.1)</p>
-                <p>R = ${(A * 0.3).toFixed(1)} + ${(S * 0.3).toFixed(1)} + ${(C * 0.3).toFixed(1)} + ${(L * 0.1).toFixed(1)}</p>
+                <p>R = (${A} × 0.3) + (${S.toFixed(2)} × 0.3) + (${C} × 0.3) + (${L} × 0.1)</p>
+                <p>R = ${(A * 0.3).toFixed(2)} + ${(S * 0.3).toFixed(2)} + ${(C * 0.3).toFixed(2)} + ${(L * 0.1).toFixed(2)}</p>
                 <p><strong>R = ${R_calc.toFixed(2)} / 5</strong></p>
                 <p><em>Interpretación: Un puntaje cercano a 5 indica una infracción de alta gravedad en todos sus componentes.</em></p>
             </div>
